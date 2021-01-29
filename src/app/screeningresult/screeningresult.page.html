@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar color ="primary">
+    <!-- <ion-title>คัดกรอง COVID-19</ion-title> -->
+  </ion-toolbar>
+</ion-header>
+<ion-list-header> 
+<h4>หน้าผลการประเมินของคุณ</h4>
+</ion-list-header>  
+
+
+
+
+
+<ion-content>
+  <ion-card  color ="light" >
+  <ion-list>
+    <ion-img  style="align-items: center"  src="/assets/doctor.svg"  height='1' width='2'></ion-img>
+    <ion-item *ngFor="let item of datascreening">
+      
+      <!-- <ion-label><h3>{{item.username}}</h3></ion-label> -->
+      <ion-col text-center>
+      <ion-label class="user_Name"> {{item.status}}</ion-label>
+      <!-- <p >{{item.date}} </p>  -->
+    </ion-col>
+    </ion-item>
+    <ion-card color ="danger" >
+      ความเสี่ยงรวม : 4 เสี่ยงมาก
+      คำแนะนำเบื้องต้น : ล้างมือ สวมหน้ากาก หลีกเลี่ยงที่แออัด
+      คำแนะนำแบบเจาะจง : ให้ติดต่อสถานพยาบาลทันที
+</ion-card>
+      
+<ion-card color ="warning">
+  ความเสี่ยงรวม : 3
+  คำแนะนำเบื้องต้น : ล้างมือ สวมหน้ากาก หลีกเลี่ยงที่แออัด
+  คำแนะนำแบบเจาะจง : เนื่องจากท่านมีประวัติอยู่ใกล้ชิดผู้ป่วยยืนยัน
+  COVID-19 ให้ติดต่อเจ้าหน้าที่ควบคุมโรค เพื่อประเมินความเสี่ยง
+  
+</ion-card>
+<ion-card color ="secondary">
+  ความเสี่ยงรวม : 2
+  คำแนะนำเบื้องต้น : ล้างมือ สวมหน้ากาก หลีกเลี่ยงที่แออัด
+  คำแนะนำแบบเจาะจง : อาจเป็นโรคอื่น ถ้า 2 วัน อาการไม่ดีขึ้นให้ไปพบแพทย์
+  
+</ion-card>
+<ion-card color ="primary">
+  ความเสี่ยงรวม : 1 ปกติ
+  คำแนะนำเบื้องต้น : ล้างมือ สวมหน้ากาก หลีกเลี่ยงที่แออัด
+
+
+</ion-card>
+    </ion-list>
+  
+ 
+</ion-card>
+
+<ion-button routerLink="/healthform"style="margin-top: 10%; margin-left: 35%" ion-button type="submit" block>ทำแบบประเมินอีกครั้ง</ion-button>
+</ion-content>
+<ion-toolbar > 

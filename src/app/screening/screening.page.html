@@ -1,0 +1,145 @@
+<ion-header> 
+  <ion-toolbar color ="primary"> 
+  <ion-title> 
+ หน้าประเมินความเสี่ยง
+  </ion-title> 
+  </ion-toolbar> 
+  </ion-header>  
+  <ion-content color="light"> 
+    <list>
+    <ion-card>
+      <ion-item color="warning"> 
+        <ion-label>
+        <h3>  ข้อที่ 1 : ผู้ป่วยมีอุณหภูมิกายตั้งแต่ 37.5 องศาขึ้นไป หรือ ให้ประวัติว่ามีไข้ใน
+         
+     </h3>
+     </ion-label>
+     </ion-item>
+    <ion-item  color="light">
+      <ion-label  position="fixed"><h3>คำตอบ</h3></ion-label>   
+        <ion-label></ion-label>
+        <ion-select [(ngModel)]="insertdata.questionnaire1"  color="warning"   okText="ตกลง" cancelText="ยกเลิก">
+          <ion-select-option value="1" >ต่ำกว่า 37.5</ion-select-option>
+          <ion-select-option value="0" >สูงกว่าหรือเท่ากับ 37.5 หรือ รู้สึกว่ามีไข้</ion-select-option>
+        </ion-select>
+     </ion-item>
+     <ion-item class="display" color="warning"> 
+       <ion-label>
+           <h3> ข้อที่ 2 : ผู้ป่วยมีอาการระบบทางเดินหายใจ อย่างใดอย่างหนึ่งดังต่อไปนี้ "ไอ น้ำมูก เจ็บคอ หายใจเหนื่อย
+          หรือหายใจลำบาก
+        </h3>
+    </ion-label>
+    </ion-item>
+     <ion-item  color="light">
+      <ion-label  ><h3>คำตอบ</h3></ion-label>
+        <ion-label></ion-label>
+        <ion-select [(ngModel)]="insertdata.questionnaire2"   color="warning"   okText="ตกลง" cancelText="ยกเลิก">
+          <ion-select-option value="1" >มี</ion-select-option>
+          <ion-select-option value="0" >ไม่มี</ion-select-option>
+        </ion-select>
+     </ion-item>
+     <ion-item color="warning"> 
+      <ion-label>
+      <h3> ข้อที่ 3 : ผู้ป่วยมีประวัติเดินทางไปยัง หรือ มาจาก หรือ อาศัยอยู่ในพื้นที่เกิดโรค COVID-19 ในช่วงเวลา 14 วัน
+       
+   </h3>
+   </ion-label>
+   </ion-item>
+     <ion-item  color="light">
+      <ion-label  position="fixed"><h3>
+        คำตอบ</h3></ion-label>
+        <ion-label></ion-label>
+        <ion-select [(ngModel)]="insertdata.questionnaire3"  color="warning"   okText="ตกลง" cancelText="ยกเลิก">
+          <ion-select-option value="1" >มี</ion-select-option>
+          <ion-select-option value="0" >ไม่มี</ion-select-option>
+        </ion-select>
+     </ion-item>
+     <ion-item color="warning"> 
+      <ion-label>
+      <h3> ข้อที่ 4 : อยู่ใกล้ชิดกับผู้ป่วยยืนยัน COVID-19 (ใกล้กว่า 1 เมตร นานเกิน 5 นาที) ในช่วง 14 วันก่อน
+       
+   </h3>
+   </ion-label>
+   </ion-item>
+     <ion-item  color="light">
+      <ion-label  position="fixed"><h3>คำตอบ</h3></ion-label>
+        <ion-label></ion-label>
+        <ion-select  [(ngModel)]="insertdata.questionnaire4"  color="warning"   okText="ตกลง" cancelText="ยกเลิก">
+          <ion-select-option value="1" >มี</ion-select-option>
+          <ion-select-option value="0" >ไม่มี</ion-select-option>
+        </ion-select>
+     </ion-item>
+
+     <ion-item color="warning">  
+      <ion-label>
+      <h3> ข้อที่ 5 : มีประวัติไปสถานที่ชุมนุมชน หรือสถานที่ที่มีการรวมกลุ่มคน เช่น ตลาดนัด ห้างสรรพสินค้า สถานพยาบาล
+        หรือ ขนส่งสาธารณะ
+       
+   </h3>
+   </ion-label>
+   </ion-item>
+     <ion-item  color="light">
+      <ion-label  position="fixed"><h3>คำตอบ</h3></ion-label>
+        <ion-label></ion-label>
+        <ion-select [(ngModel)]="insertdata.questionnaire5"  color="warning"   okText="ตกลง" cancelText="ยกเลิก">
+          <ion-select-option value="1" >มี</ion-select-option>
+          <ion-select-option value="0" >ไม่มี</ion-select-option>
+        </ion-select>
+     </ion-item>
+    </ion-card>
+     <!-- <ion-item><ion-label>  ท่านมีอาการต่อไปนี้หรือไม่(หากไม่มีไม่ต้องทำเครื่่องหมายใดๆ </ion-label></ion-item> -->
+     <ion-card>
+      <ion-item color="warning"> 
+        <ion-label>
+        <h3>ข้อที่ 6 : ผู้ป่วยประกอบอาชีพที่สัมผัสใกล้ชิดกับนักท่องเที่ยวต่างชาติ สถานที่แออัด
+          หรือติดต่อคนจำนวนมาก
+         
+     </h3>
+     </ion-label>
+     </ion-item>
+     <ion-item  color="light">
+      <ion-label  position="fixed"><h3>คำตอบ</h3></ion-label>
+        <ion-label></ion-label>
+        <ion-select  [(ngModel)]="insertdata.questionnaire6"  color="warning"   okText="ตกลง" cancelText="ยกเลิก">
+          <ion-select-option value="1" >ใช่</ion-select-option>
+          <ion-select-option value="0" >ไม่ใช่</ion-select-option>
+        </ion-select>
+     </ion-item>
+     <ion-item color="warning"> 
+      <ion-label>
+      <h3>ข้อที่ 7 : เป็นบุคลากรทางการแพทย์
+       
+   </h3>
+   </ion-label>
+   </ion-item>
+     <ion-item  color="light">
+      <ion-label  position="fixed"><h3>คำตอบ</h3></ion-label>
+        <ion-label></ion-label>
+        <ion-select  [(ngModel)]="insertdata.questionnaire7"  color="warning"   okText="ตกลง" cancelText="ยกเลิก">
+          <ion-select-option value="1" >ใช่</ion-select-option>
+          <ion-select-option value="0" >ไม่ใช่</ion-select-option>
+        </ion-select>
+     </ion-item>
+     <ion-item color="warning"> 
+      <ion-label>
+      <h3> ข้อที่่ 8: มีผู้ใกล้ชิดป่วยเป็นไข้หวัดพร้อมกัน มากกว่า 5 คน ในช่วงสัปดาห์ที่ป่วย
+       
+   </h3>
+   </ion-label>
+   </ion-item>
+     <ion-item  color="light">
+      <ion-label  position="fixed"><h3>คำตอบ</h3></ion-label>
+        <ion-label></ion-label>
+        <ion-select  [(ngModel)]="insertdata.questionnaire8"  color="warning"   okText="ตกลง" cancelText="ยกเลิก">
+          <ion-select-option value="1" >มี</ion-select-option>
+          <ion-select-option value="0" >ไม่มี</ion-select-option>
+        </ion-select>
+     </ion-item>
+    </ion-card>
+    <ion-button  (click)="savescreening()" type="submit" ion-button secondary style="margin-top: 10%; margin-left: 35%" color="danger">บันทึก</ion-button>
+  </list>
+  </ion-content>   
+  <ion-toolbar > 
+    <ion-title> 
+    </ion-title> 
+    </ion-toolbar> 

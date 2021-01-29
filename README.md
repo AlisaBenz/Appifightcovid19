@@ -1,2 +1,0 @@
-# Appifightcovid19
-Project

@@ -1,0 +1,37 @@
+<ion-header> 
+  <ion-toolbar color ="primary"> 
+  <ion-title> 
+    แบบบันทึกสุขภาพก่อนรับการคัดกรอง
+  </ion-title> 
+  
+  </ion-toolbar> 
+  </ion-header>  
+  <ion-content> 
+    <list>
+      <ion-card color = "warning" > 
+    <ion-item>
+      <ion-label>แบบบันทึกสุขภาพก่อนรับการคัดกรอง</ion-label>
+    </ion-item>
+  </ion-card>
+    <!-- <ion-item><ion-label>   ท่านมีโรคประจำตัวหรือไม่ </ion-label></ion-item> -->
+    <ion-card>
+      <ion-item  color="success"><ion-label>   ท่านมีโรคประจำตัวหรือไม่ </ion-label></ion-item>
+    <ion-item  color="light">
+      <ion-label  position="fixed"><h3>โรคประจำตัว</h3></ion-label>
+        <ion-label></ion-label>
+        <ion-select [(ngModel)]="insertdata.healthquestion1"  color="warning"   okText="ตกลง" cancelText="ยกเลิก">
+          <ion-select-option value="มี" >มี</ion-select-option>
+          <ion-select-option value="ไม่มี" >ไม่มี</ion-select-option>
+        </ion-select>
+     </ion-item>
+     <ion-item  color="success" ><ion-label> โปรดระบุโรคประจำตัวของท่าน ถ้ามี</ion-label></ion-item>
+     <ion-item>
+       <ion-input type="text" value="ไม่มี" [(ngModel)]="insertdata.healthquestion2"></ion-input>
+     </ion-item>
+    </ion-card>
+    <!-- <ion-button  (click)="savehealthform()" type="submit" ion-button secondary style="margin-top: 10%; margin-left: 35%" color="danger">บันทึก</ion-button> -->
+    <ion-button  routerLink="/screening" class="btn-2" expand="full"  color="danger"  >ข้าม</ion-button> 
+    <ion-button (click)="savehealthform()" class="btn-2" expand="full"  color="primary" >บันทึก</ion-button>
+  </list>
+   
+  </ion-content>   
