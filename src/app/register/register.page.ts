@@ -20,7 +20,7 @@ export class RegisterPage implements OnInit {
     public navParams: NavParams,
     public alertController: AlertController) { }
 
-  savescreening(){
+  savesmember(){
     let url = 'http://localhost/db_ifightcovid19/insertdatamember.php'
 
     let postdataset = new FormData();
@@ -38,7 +38,7 @@ export class RegisterPage implements OnInit {
       if(call.status == 200){
       }else{}});
       const alert = document.createElement('ion-alert');
-    alert.message = 'บันทึกรายการเสร็จสมบูรณ์';
+    alert.message = 'ลงทะเบียนเสร็จเรียบร้อย';
     alert.buttons = ['ตกลง'];
     document.body.appendChild(alert);
     return alert.present();

@@ -1,17 +1,21 @@
 <ion-header> 
   <ion-toolbar color ="primary"> 
-  <ion-title> 
- หน้าบันทึกฟอร์ม14วัน 
+  <ion-title >
+<!-- <ion-icon name="arrow-back-outline" routerLink="/"></ion-icon>  -->
+หน้าบันทึกฟอร์ม14วัน
   </ion-title> 
   </ion-toolbar> 
   </ion-header>  
   <ion-content> 
     <list>
-      <ion-card color = "warning" > 
+      <!-- <ion-card color = "warning" > 
         <ion-item>
           <ion-label>แบบฟอร์มสุขภาพจำนวน14วัน เพื่่อประเมินอาการหลังมีอาการเสี่ยงหรือต้องกักตัว</ion-label>
         </ion-item>
-      </ion-card>
+      </ion-card> -->
+      <ion-card-header text = center> 
+        แบบฟอร์มสุขภาพจำนวน14วัน เพื่่อประเมินอาการหลังมีอาการเสี่ยงหรือต้องกักตัว
+      </ion-card-header>
 
     <!-- <ion-item>
       <ion-label>  แบบฟอร์มสุขภาพจำนวน14วัน เพื่่อประเมินอาการหลังมีอาการเสี่ยงหรือต้องกักตัว </ion-label>
@@ -20,6 +24,7 @@
     <ion-item  color="success"><ion-label>  ท่านมีอาการต่อไปนี้หรือไม่ </ion-label></ion-item> 
     <ion-card>
     <ion-item  color="light">
+      <ion-icon name="thermometer-outline"color="warning"></ion-icon>
       <ion-label  position="fixed"><h3>มีไข้</h3></ion-label>
         <ion-label></ion-label>
         <ion-select [(ngModel)]="insertdata.symptom1"  color="warning"   okText="ตกลง" cancelText="ยกเลิก">
@@ -28,6 +33,7 @@
         </ion-select>
      </ion-item>
      <ion-item  color="light">
+      <ion-icon name="thermometer-outline" color="warning"></ion-icon>
       <ion-label  position="fixed"><h3>ไอ</h3></ion-label>
         <ion-label></ion-label>
         <ion-select [(ngModel)]="insertdata.symptom2"   color="warning"   okText="ตกลง" cancelText="ยกเลิก">
@@ -36,6 +42,7 @@
         </ion-select>
      </ion-item>
      <ion-item  color="light">
+      <ion-icon name="thermometer-outline" color="warning"></ion-icon>
       <ion-label  position="fixed"><h3>น้ำมูก</h3></ion-label>
         <ion-label></ion-label>
         <ion-select [(ngModel)]="insertdata.symptom3"  color="warning"   okText="ตกลง" cancelText="ยกเลิก">
@@ -44,6 +51,8 @@
         </ion-select>
      </ion-item>
      <ion-item  color="light">
+      <ion-icon name="person-remove-outline"color="danger"></ion-icon>
+
       <ion-label  position="fixed"><h3>เจ็บคอ</h3></ion-label>
         <ion-label></ion-label>
         <ion-select  [(ngModel)]="insertdata.symptom4"  color="warning"   okText="ตกลง" cancelText="ยกเลิก">
@@ -52,7 +61,8 @@
         </ion-select>
      </ion-item>
      <ion-item  color="light">
-      <ion-label  position="fixed"><h3>หายใจลำบาก หอบเหนื่อย</h3></ion-label>
+      <ion-icon name="person-remove-outline" color="danger"></ion-icon>
+      <ion-label  position="fixed"><h3>หายใจลำบาก</h3><h3>หอบเหนื่อย</h3></ion-label>
         <ion-label></ion-label>
         <ion-select [(ngModel)]="insertdata.symptom5"  color="warning"   okText="ตกลง" cancelText="ยกเลิก">
           <ion-select-option value="มี" >มี</ion-select-option>
@@ -60,9 +70,10 @@
         </ion-select>
      </ion-item>
     </ion-card>
-     <ion-item  color="success"><ion-label>  ท่านมีอาการต่อไปนี้หรือไม่(หากไม่มีไม่ต้องทำเครื่่องหมายใดๆ </ion-label></ion-item>
+     <ion-item  color="success"><ion-label> <h3>ท่านมีอาการต่อไปนี้หรือไม่</h3><h3>(หากไม่มีไม่ต้องทำเครื่่องหมายใดๆ )</h3></ion-label></ion-item>
      <ion-card>
      <ion-item  color="light">
+      <ion-icon name="fast-food-outline" color="primary"></ion-icon>
       <ion-label  position="fixed"><h3>ไม่ได้กลิ่น</h3></ion-label>
         <ion-label></ion-label>
         <ion-select  [(ngModel)]="insertdata.symptom6"  color="warning"   okText="ตกลง" cancelText="ยกเลิก">
@@ -71,7 +82,9 @@
         </ion-select>
      </ion-item>
      <ion-item  color="light">
+      <ion-icon name="fast-food-outline"color="primary"></ion-icon>
       <ion-label  position="fixed"><h3>ไม่รู้รส</h3></ion-label>
+      
         <ion-label></ion-label>
         <ion-select  [(ngModel)]="insertdata.symptom7"  color="warning"   okText="ตกลง" cancelText="ยกเลิก">
           <ion-select-option value="มี" >มี</ion-select-option>
@@ -79,24 +92,34 @@
         </ion-select>
      </ion-item>
     </ion-card>
-    <ion-button  (click)="saveform14day()" type="submit" ion-button secondary style="margin-top: 2%; margin-left: 40%" color="danger">บันทึก</ion-button>
-  </list>
-  </ion-content>   
-    <ion-tab-bar color="primary" slot="bottom">
-      <ion-tab-button tab="tab1">
-        <ion-icon name="person"></ion-icon>
-        <ion-label>ข้อมูล</ion-label>
-      </ion-tab-button>
-  
-      <ion-tab-button tab="tab2">
-        <ion-icon name="chatbubbles"></ion-icon>
-        <ion-label>แชท</ion-label>
-      </ion-tab-button>
-  
-      <ion-tab-button tab="tab3">
-        <ion-icon name="clipboard"></ion-icon>
-        <ion-label>บันทึกฟอร์ม</ion-label>
-      </ion-tab-button>
-    </ion-tab-bar>
-  
-  
+    <ion-row>
+      <ion-col>
+          <ion-button (click)="saveform14day()" type="submit" fill="solid" expand="full">
+            บันทึกแบบฟอร์ม
+          </ion-button>
+      </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+        <ion-button routerLink="/from14daytable"  type="submit" fill="solid" expand="full" color="danger">
+          ดูสถานะความเสี่ยง
+        </ion-button>
+    </ion-col>
+</ion-row>
+   
+<ion-tab-bar color="primary" slot="bottom">
+  <ion-tab-button routerLink="/screeningresult">
+    <ion-icon name="person"></ion-icon>
+    <ion-label>ข้อมูล</ion-label>
+  </ion-tab-button>
+
+  <ion-tab-button routerLink="/chatbot">
+    <ion-icon name="chatbubbles"></ion-icon>
+    <ion-label>แชท</ion-label>
+  </ion-tab-button>
+
+  <ion-tab-button routerLink="/form14day" >
+    <ion-icon name="clipboard"></ion-icon>
+    <ion-label>บันทึกฟอร์ม</ion-label>
+  </ion-tab-button>
+</ion-tab-bar>

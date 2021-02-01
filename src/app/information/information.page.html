@@ -9,31 +9,39 @@
   </ion-card-header>
 
 <ion-content>
-  <ion-card>
-      <ion-item>
-      <ion-button color="success">
-        <ion-icon name="person" item-start></ion-icon>
-        ปกติ
-      </ion-button>
+  <ion-card color ="medium">
+      <ion-item color ="medium">
+        <ion-icon name="person" item-start color= "danger"></ion-icon>
+        <p3>ผู้ป่วยทั้งหมด:ราย</p3>
+
     </ion-item>
-    <ion-item>
-      <ion-button color ="warning">
-        <ion-icon name="person" item-start></ion-icon>
-        ปานกลาง
-      </ion-button>
-    </ion-item>
-    <ion-item>
-      <ion-button color="warning">
-        <ion-icon name="person" item-start></ion-icon>
-        เสี่ยง
-      </ion-button>
-    </ion-item>
-    <ion-item>
-      <ion-button color="danger">
-        <ion-icon name="person" item-start></ion-icon>
-        เสี่ยงมาก
-      </ion-button>
-    </ion-item>
-  
   </ion-card>
+  <ion-card color ="medium">
+    <ion-item color ="danger">
+      <ion-icon name="person" item-start color="medium"></ion-icon>
+      <p3>พบใหม่วันนี้:ราย</p3>
+
+    </ion-item>
+  </ion-card>
+
+
 </ion-content>
+<!-- <ion-information> -->
+<ion-tab-bar color="primary" slot="bottom">
+  <ion-tab-button routerLink="/information">
+    <ion-icon name="person"></ion-icon>
+    <ion-label>ข้อมูล</ion-label>
+  </ion-tab-button>
+  <ion-tab-button routerLink="/patientgraph">
+    <ion-icon name="stats-chart-outline"></ion-icon>
+    <ion-label>กราฟ</ion-label>
+  </ion-tab-button>
+<ion-tab-button  routerLink="/patientmap">
+  <ion-icon name="location-outline"></ion-icon>
+  <ion-label>สถานะผู้ป่วย</ion-label>
+</ion-tab-button>
+<ion-tab-button routerLink="/addformquestion">
+  <ion-icon name="clipboard"></ion-icon>
+  <ion-label>เพิ่มแบบฟอร์ม</ion-label>
+</ion-tab-button>
+<!-- </ion-information> -->

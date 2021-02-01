@@ -1,67 +1,123 @@
-<ion-header>
-  <ion-toolbar color = "primary">
-    <!-- <ion-button color="light" (click)="dismissRegister()">Close</ion-button> -->
-    <ion-title>Register</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content padding>
 
-  <ion-list>
-    <ion-item>
-        <ion-label position="floating">ชื่อ</ion-label>
-        <ion-input type="text" [(ngModel)]="insertdata.name"></ion-input>
-    </ion-item>
-  
-    <ion-item>
-      <ion-label position="floating">นามสกุล</ion-label>
-      <ion-input   type="text" [(ngModel)]="insertdata.lastname"></ion-input>
-    </ion-item>
-  
-    <ion-item>
-      <ion-label position="floating">เลขบัตรประชาชน</ion-label>
-      <ion-input  type="text" [(ngModel)]="insertdata.personid"></ion-input>
-    </ion-item>
-  
-    <ion-item>
-      <ion-label position="floating">วันเดือนปี</ion-label>
-      <ion-input type="text" value="" [(ngModel)]="insertdata.date"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">ที่อยู่</ion-label>
-      <ion-input  type="text" [(ngModel)]="insertdata.address"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label  position="fixed"><h3>ตำบล</h3></ion-label>   
-      <ion-label></ion-label>
-      <ion-select  color="warning"  [(ngModel)]="insertdata.district" okText="ตกลง" cancelText="ยกเลิก">
-        <ion-select-option value="ตำบลศรีไค" >ตำบลศรีไค</ion-select-option>
-        <ion-select-option value="0" >ดดดดด</ion-select-option>
-      </ion-select>
-   </ion-item>
-   <ion-item>
-    <ion-label  position="fixed"><h3>อำเภอ</h3></ion-label>   
-      <ion-label></ion-label>
-      <ion-select  color="warning"  [(ngModel)]="insertdata.sum_district"  okText="ตกลง" cancelText="ยกเลิก">
-        <ion-select-option value="วารินชำราบ" >วารินชำราบ</ion-select-option>
-      </ion-select>
-   </ion-item>
-   <ion-item>
-    <ion-label  position="fixed"><h3>จังหวัด</h3></ion-label>   
-      <ion-label></ion-label>
-      <ion-select  color="warning"  [(ngModel)]="insertdata.provine"  okText="ตกลง" cancelText="ยกเลิก">
-        <ion-select-option value="อุบลราชธานี" >อุบลราชธานี</ion-select-option>
-      </ion-select>
-   </ion-item>
-  <ion-item>
-    <ion-label position="floating">เบอร์โทรศัพท์</ion-label>
-    <ion-input  type="text" [(ngModel)]="insertdata.phone" ></ion-input>
-</ion-item>
+  <ion-content>
 
-  
-    <ion-button (click)="savescreening()" type="submit" expand="full" color="danger">ลงทะเบียน</ion-button>
-</ion-list>
+    <ion-grid class="grid1">
+    
+        <ion-row class="row1">
+            <ion-col>
+    
+            </ion-col>
+        </ion-row>
+    
+        <ion-row class="row2">
+            <ion-col>
+    
+            </ion-col>
+        </ion-row>
+    
+    </ion-grid>
+    
+    <ion-slide>
+        <div class="contaier-login">
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <h1>ลงทะเบียน</h1>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                      <ion-list>
+                        <ion-item>
+                            <ion-label position="floating">ชื่อ</ion-label>
+                            <ion-input type="text"  value="" [(ngModel)]="insertdata.name"></ion-input>
+                        </ion-item>
+                      
+                        <ion-item>
+                          <ion-label position="floating">นามสกุล</ion-label>
+                          <ion-input   type="text"  value="" [(ngModel)]="insertdata.lastname"></ion-input>
+                        </ion-item>
+                      
+                        <ion-item>
+                          <ion-label position="floating">เลขบัตรประชาชน</ion-label>
+                          <ion-input  type="text"  value="" [(ngModel)]="insertdata.personid"></ion-input>
+                        </ion-item>
+                      
+                        <ion-item>
+                          <ion-label position="floating">วันเดือนปี</ion-label>
+                          <ion-input type="text" value="" [(ngModel)]="insertdata.date"></ion-input>
+                        </ion-item>
+                        <ion-item>
+                          <ion-label position="floating">ที่อยู่</ion-label>
+                          <ion-input  type="text"  value="" [(ngModel)]="insertdata.address"></ion-input>
+                      </ion-item>
+                      <ion-item>
+                        <ion-label  position="fixed"><h3>ตำบล</h3></ion-label>   
+                          <ion-label></ion-label>
+                          <ion-select  [(ngModel)]="insertdata.district" color="warning"  okText="ตกลง" cancelText="ยกเลิก">
+                            <ion-select-option value="ตำบลศรีไค" >ตำบลศรีไค</ion-select-option>
+                            <ion-select-option value="ตำบลธาตุ" >ตำบลธาตุ</ion-select-option>
+                            <ion-select-option value="ตำบลคำขวาง" >ตำบลคำขวาง</ion-select-option> 
+                            <ion-select-option value="ตำบลท่าลาด" >ตำบลท่าลาด</ion-select-option>
+                            <ion-select-option value="ตำบลบุ่งไหม" >ตำบลบุ่งไหม</ion-select-option>
+                            <ion-select-option value="ตำบลหนองกินเพลน" >ตำบลหนองกินเพลน</ion-select-option>
+                            <ion-select-option value="ตำบลแสนสุข" >ตำบลแสนสุข</ion-select-option>
+                            <ion-select-option value="ตำบลโพธิ์ใหญ่" >ตำบลโพธิ์ใหญ่</ion-select-option>
+                            <ion-select-option value="ตำบลน้ำคำแซ่บ" >ตำบลน้ำคำแซ่บ</ion-select-option>
+                            <ion-select-option value="ตำบลวารินชำราบ" >ตำบลวารินชำราบ</ion-select-option>
+                            <ion-select-option value="ตำบลห้วยขยุง" >ตำบลห้วยขยุง</ion-select-option>
+                            <ion-select-option value="ตำบลโนนผึ้ง" >ตำบลโนนผึ้ง</ion-select-option>
+                            <ion-select-option value="ตำบลคูเมือง" >ตำบลคูเมือง</ion-select-option>
+                            <ion-select-option value="ตำบลบุ่งหวาย" >ตำบลบุ่งหวาย</ion-select-option>
+                            <ion-select-option value="ตำบลสระสมิง" >ตำบลสระสมิง</ion-select-option>
 
- <p text-center> หรือ</p> 
-  <ion-button routerLink="/loginpatient" expand="full" color="primary" (click)="loginModal()">เข้าสู่ระเบบ</ion-button> 
-</ion-content>  
+                            <ion-select-option value="ตำบลโนนโหนน" >ตำบลโนนโหนน</ion-select-option>
+                          </ion-select>
+                       </ion-item>
+                       <ion-item>
+                        <ion-label  position="fixed"><h3>อำเภอ</h3></ion-label>   
+                          <ion-label></ion-label>
+                          <ion-select   [(ngModel)]="insertdata.sum_district" color="warning"   okText="ตกลง" cancelText="ยกเลิก">
+                            <ion-select-option value="วารินชำราบ" >วารินชำราบ</ion-select-option>
+                          </ion-select>
+                       </ion-item>
+                       <ion-item>
+                        <ion-label  position="fixed"><h3>จังหวัด</h3></ion-label>   
+                          <ion-label></ion-label>
+                          <ion-select   [(ngModel)]="insertdata.provine" color="warning"   okText="ตกลง" cancelText="ยกเลิก">
+                            <ion-select-option value="อุบลราชธานี" >อุบลราชธานี</ion-select-option>
+                          </ion-select>
+                       </ion-item>
+                      <ion-item>
+                        <ion-label position="floating">เบอร์โทรศัพท์</ion-label>
+                        <ion-input  type="text" [(ngModel)]="insertdata.phone" ></ion-input>
+                    </ion-item>
+    
+                        </ion-list>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <ion-button routerLink="/description" (click)="savemember()" type="submit" fill="solid" expand="full">
+                            ลงทะเบียน
+                        </ion-button>
+                    </ion-col>
+                    <ion-col>
+                      <ion-button routerLink="/loginpatient"  type="submit" fill="outline" expand="block">
+                          เข้าสู่ระบบ
+                      </ion-button>
+                  </ion-col>
+
+                </ion-row>
+                <ion-row>
+                  
+                    <ion-col>
+                        <!-- <ion-label>
+                            <h3>¿Olvido la contraseña?</h3>
+                        </ion-label> -->
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+    </ion-slide>

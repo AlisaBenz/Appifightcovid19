@@ -31,11 +31,11 @@ export class HealthformPage implements OnInit {
     callback.subscribe(call =>{
       if(call.status == 200){
       }else{}});
-      const alert = document.createElement('ion-alert');
-    alert.message = 'บันทึกรายการเสร็จสมบูรณ์';
-    alert.buttons = ['ตกลง'];
-    document.body.appendChild(alert);
-    return alert.present();
+    //   const alert = document.createElement('ion-alert');
+    // alert.message = 'บันทึกรายการเสร็จสมบูรณ์';
+    // alert.buttons = ['ตกลง'];
+    // document.body.appendChild(alert);
+    // return alert.present();
   }
 
   ngOnInit() {

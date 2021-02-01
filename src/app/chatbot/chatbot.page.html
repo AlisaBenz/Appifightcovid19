@@ -1,10 +1,26 @@
 <ion-header>
-  <ion-toolbar color ="primary" >
-    <!-- <ion-img  style="align-items: center"  src="/assets/doctor1.png"></ion-img> -->
-    <ion-title>ไอรู้สู้โควิดถาม-ตอบ</ion-title>
+  <ion-toolbar color = "primary">
+    <ion-title>ไอรู้สู้โควิด ถาม-ตอบ</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
 </ion-content>
+
+  
+<ion-tab-bar color="primary" slot="bottom">
+  <ion-tab-button routerLink="/screeningresult">
+    <ion-icon name="person"></ion-icon>
+    <ion-label>ข้อมูล</ion-label>
+  </ion-tab-button>
+
+  <ion-tab-button routerLink="/chatbot">
+    <ion-icon name="chatbubbles"></ion-icon>
+    <ion-label>แชท</ion-label>
+  </ion-tab-button>
+
+  <ion-tab-button routerLink="/form14day" >
+    <ion-icon name="clipboard"></ion-icon>
+    <ion-label>บันทึกฟอร์ม</ion-label>
+  </ion-tab-button>
+</ion-tab-bar>

@@ -27,10 +27,6 @@ const routes: Routes = [
     loadChildren: () => import('./form14day/form14day.module').then( m => m.Form14dayPageModule)
   },
   {
-    path: 'addform-q',
-    loadChildren: () => import('./addform-q/addform-q.module').then( m => m.AddformQPageModule)
-  },
-  {
     path: 'healthform',
     loadChildren: () => import('./healthform/healthform.module').then( m => m.HealthformPageModule)
   },
@@ -69,6 +65,10 @@ const routes: Routes = [
   {
     path: 'screeningresult',
     loadChildren: () => import('./screeningresult/screeningresult.module').then( m => m.ScreeningresultPageModule)
+  },
+  {
+    path: 'addformquestion',
+    loadChildren: () => import('./addformquestion/addformquestion.module').then( m => m.AddformquestionPageModule)
   },
 
 ];

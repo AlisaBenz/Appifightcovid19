@@ -1,16 +1,40 @@
 <ion-header>
   <ion-toolbar color ="primary">
-    <ion-title>หน้าแสดงข้แมูลบันทึกฟอร์ม14วัน</ion-title>
+    <ion-title> <ion-icon name="arrow-back-outline" routerLink="/form14day"></ion-icon> 
+      หน้าข้อมูลบันทึกฟอร์ม14วัน</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
+    <ion-card-header text = center> 
+      แสดงรายละเอียดข้อมูล14วัน
+    </ion-card-header>
+
       <ion-item *ngFor="let item of dataform14day">
-        <ion-icon name="person"></ion-icon>
-        <ion-label><h3>{{item.username}}</h3></ion-label>
+        <ion-icon name="time-outline" color="warning"></ion-icon>
+        <!-- <ion-label><h3>{{item.username}}</h3></ion-label> -->
         <p >{{item.date}} </p>
-        <ion-label >.   {{item.status}}</ion-label>
+        <ion-icon name="person" color = "medium"></ion-icon>
+
+        <ion-label><h3> {{item.status}}</h3></ion-label>
       </ion-item>
       </ion-list>
 </ion-content>
+  
+<ion-tab-bar color="primary" slot="bottom">
+  <!-- <ion-tab-button routerLink="/screeningresult">
+    <ion-icon name="person"></ion-icon>
+    <ion-label>ข้อมูล</ion-label>
+  </ion-tab-button>
+
+  <ion-tab-button routerLink="/chatbot">
+    <ion-icon name="chatbubbles"></ion-icon>
+    <ion-label>แชท</ion-label>
+  </ion-tab-button>
+
+  <ion-tab-button routerLink="/form14day" >
+    <ion-icon name="clipboard"></ion-icon>
+    <ion-label>บันทึกฟอร์ม</ion-label>
+  </ion-tab-button> -->
+</ion-tab-bar>

@@ -6,11 +6,6 @@
 <ion-list-header> 
 <h4>หน้าผลการประเมินของคุณ</h4>
 </ion-list-header>  
-
-
-
-
-
 <ion-content>
   <ion-card  color ="light" >
   <ion-list>
@@ -52,7 +47,30 @@
   
  
 </ion-card>
+<ion-row>
+  <ion-col>
+      <ion-button routerLink="/screening" type="submit" fill="solid" expand="full"color="danger">
+        ทำแบบประเมินอีกครั้ง
+      </ion-button>
+  </ion-col>
+</ion-row>
 
-<ion-button routerLink="/healthform"style="margin-top: 10%; margin-left: 35%" ion-button type="submit" block>ทำแบบประเมินอีกครั้ง</ion-button>
+
 </ion-content>
-<ion-toolbar > 
+  
+<ion-tab-bar color="primary" slot="bottom">
+  <ion-tab-button routerLink="/screeningresult">
+    <ion-icon name="person"></ion-icon>
+    <ion-label>ข้อมูล</ion-label>
+  </ion-tab-button>
+
+  <ion-tab-button routerLink="/chatbot">
+    <ion-icon name="chatbubbles"></ion-icon>
+    <ion-label>แชท</ion-label>
+  </ion-tab-button>
+
+  <ion-tab-button routerLink="/form14day" >
+    <ion-icon name="clipboard"></ion-icon>
+    <ion-label>บันทึกฟอร์ม</ion-label>
+  </ion-tab-button>
+</ion-tab-bar>
