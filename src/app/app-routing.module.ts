@@ -70,7 +70,7 @@ const routes: Routes = [
     path: 'addformquestion',
     loadChildren: () => import('./addformquestion/addformquestion.module').then( m => m.AddformquestionPageModule)
   },
-
+ 
 ];
 @NgModule({
   imports: [

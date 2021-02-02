@@ -31,33 +31,26 @@ export class LoginpatientPage implements OnInit {
       postdataset.append('personid',this.insertdata.personid);
       let callback:Observable<any> = this.http.post(url,postdataset);
       callback.subscribe(call =>{
-        console.log('this is calback :',call);
-        console.log(call[0]['personid']);
-        console.log(this.insertdata.personid);
-        console.log(call.error.message);
-        // if (call.error.message) {
-
+        // console.log('this is calback :',call);
+        // console.log(call[0]['personid']);
+        // console.log(this.insertdata.personid);
+        // console.log(call.error.message);
+        // if(this.insertdata.personid == call[0]['personid']){
+        //   const alert = document.createElement('ion-alert');
+        //   alert.message = 'Login successful';
+        //   alert.buttons = ['ตกลง'];
+        //   document.body.appendChild(alert);
+        //   this.router.navigate(['/description']);
+        //   return alert.present();
+        // }else if (call.status == 404){
+        //   const alert = document.createElement('ion-alert');
+        //   alert.message = 'Invalid password';
+        //   alert.buttons = ['ตกลง'];
+        //   document.body.appendChild(alert);
+        //   return alert.present();
         // }
-        if(this.insertdata.personid == call[0]['personid']){
-          const alert = document.createElement('ion-alert');
-          alert.message = 'Login successful';
-          alert.buttons = ['ตกลง'];
-          document.body.appendChild(alert);
-          this.router.navigate(['/description']);
-          return alert.present();
-        }else{
-          const alert = document.createElement('ion-alert');
-          alert.message = 'Invalid password';
-          alert.buttons = ['ตกลง'];
-          document.body.appendChild(alert);
-          return alert.present();
-        }
       });
-        // const alert = document.createElement('ion-alert');
-      // alert.message = 'บันทึกรายการเสร็จสมบูรณ์';
-      // alert.buttons = ['ตกลง'];
-      // document.body.appendChild(alert);
-      // return alert.present();
+     
     }
     ngOnInit() {
     }

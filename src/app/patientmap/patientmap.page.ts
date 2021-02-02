@@ -16,24 +16,25 @@ GoogleMapOptions
   templateUrl: './patientmap.page.html',
   styleUrls: ['./patientmap.page.scss'],
 })
-export class PatientmapPage implements OnInit, AfterContentInit {
+export class PatientmapPage implements OnInit {
   map;
   @ViewChild('mapElement') mapElement;
   constructor() {
   }
 
   ngOnInit(): void {
+    
   }
   
 
-  ngAfterContentInit(): void {
-    this.map = new google.maps.Map(
-        this.mapElement.nativeElement,
-        {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 8
-        });
-  }
-}
+  // ngAfterContentInit(): void {
+  //   this.map = new google.maps.Map(
+  //       this.mapElement.nativeElement,
+  //       {
+  //         center: {lat: -34.397, lng: 150.644},
+  //         zoom: 8
+  //       });
+  // }
+} 
 
 
