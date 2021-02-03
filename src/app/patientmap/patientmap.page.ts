@@ -17,8 +17,8 @@ GoogleMapOptions
   styleUrls: ['./patientmap.page.scss'],
 })
 export class PatientmapPage implements OnInit {
-  map;
-  @ViewChild('mapElement') mapElement;
+  // map;
+  // @ViewChild('mapElement') mapElement;
   constructor() {
   }
 

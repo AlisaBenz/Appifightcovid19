@@ -1,9 +1,22 @@
 <ion-header>
   <ion-toolbar color = "primary">
-    <ion-title>หน้ารายงานภาพรวม</ion-title>
+    <ion-title> <ion-icon name="arrow-back-outline" routerLink="/information"></ion-icon>หน้ารายงานภาพรวม</ion-title>
   </ion-toolbar>
 </ion-header>
   <ion-content>
+    <ion-card-header text = center> 
+      <h3>รายชื่อสถานะผู้ป่วย ที่มีสถานะปกติ</h3> 
+     
+      
+     </ion-card-header>
+    <ion-card-header  routerlink ="/patientmap" >
+      <ion-icon name="person"></ion-icon>
+      <ion-label>นางสุดใจ มีสุข</ion-label>
+      
+    </ion-card-header>
+  
+  
+     
     <!-- <ion-item > -->
   <!-- <ion-button (click)="showChart()"><h6>แสดงแผนภูมิ</h6></ion-button> -->
   <!-- </ion-item> -->
@@ -16,10 +29,10 @@
       <ion-label>ข้อมูล</ion-label>
     </ion-tab-button>
   
-    <ion-tab-button routerLink="/patientgraph">
+    <!-- <ion-tab-button routerLink="/patientgraph">
       <ion-icon name="stats-chart-outline"></ion-icon>
       <ion-label>กราฟ</ion-label>
-    </ion-tab-button>
+    </ion-tab-button> -->
   <ion-tab-button routerLink="/patientmap">
     <ion-icon name="location-outline"></ion-icon>
     <ion-label>สถานะผู้ป่วย</ion-label>

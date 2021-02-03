@@ -70,6 +70,18 @@ const routes: Routes = [
     path: 'addformquestion',
     loadChildren: () => import('./addformquestion/addformquestion.module').then( m => m.AddformquestionPageModule)
   },
+  {
+    path: 'mediumstatus',
+    loadChildren: () => import('./mediumstatus/mediumstatus.module').then( m => m.MediumstatusPageModule)
+  },
+  {
+    path: 'riskystatus',
+    loadChildren: () => import('./riskystatus/riskystatus.module').then( m => m.RiskystatusPageModule)
+  },
+  {
+    path: 'veryriskystatus',
+    loadChildren: () => import('./veryriskystatus/veryriskystatus.module').then( m => m.VeryriskystatusPageModule)
+  },
  
 ];
 @NgModule({
