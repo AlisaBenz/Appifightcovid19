@@ -22,7 +22,7 @@ export class PatientmapPage implements OnInit {
   constructor() {
   }
 
-  ngOnInit(): void {
+  ngOnInit(){
     
   }
   
