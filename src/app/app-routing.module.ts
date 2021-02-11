@@ -82,7 +82,7 @@ const routes: Routes = [
     path: 'veryriskystatus',
     loadChildren: () => import('./veryriskystatus/veryriskystatus.module').then( m => m.VeryriskystatusPageModule)
   },
- 
+
 ];
 @NgModule({
   imports: [

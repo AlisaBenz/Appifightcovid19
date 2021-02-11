@@ -1,4 +1,4 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar color ="primary">
     <ion-title>คัดกรอง COVID-19</ion-title>
   </ion-toolbar>
@@ -9,11 +9,7 @@
 
 <ion-content>
   <ion-card color ="light" >
-    <!-- <ion-item>
-      <ion-icon name="pin" slot="start"></ion-icon>
-      <ion-label>ion-item in a card, icon left, button right</ion-label>
-      <ion-button fill="outline" slot="end">View</ion-button>
-    </ion-item> -->
+ 
   
     <ion-card-content>
       คำอธิบายแบบคัดกรองท่านสามารถทำแบบคัดกรองผู้ป่วย COVID-19 คัดกรองผ่าน Ifightcovid19 App หากท่านไม่มีความประสงค์จะเข้ารับการคัดกรอง กรุณาปิดแล้วออกจากหน้านี้
@@ -23,16 +19,38 @@
     <div class="wrapper ">
     <ion-checkbox checked="true"></ion-checkbox>
   </div>
-    <!-- <ion-list>
-      <ion-item *ngFor="let entry of form">
-        <ion-label>{{entry.val}}</ion-label>
-        <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>
-      </ion-item>
-    </ion-list> -->
     <ion-card-content>
       ข้าพเจ้ารับทราบคำอธิบายแบบคัดกรองและต้องการเข้ารับการคัดกรองCOVID-19
     </ion-card-content>
   </ion-card>
   <ion-button routerLink="/healthform"style="margin-top: 10%; margin-left: 35%" ion-button type="submit" block>ยอมรับ</ion-button>
 
-</ion-content>
+</ion-content> -->
+ 
+<ion-header> 
+  <ion-toolbar color="primary"> 
+  <ion-title>คัดกรอง COVID-19</ion-title> 
+  </ion-toolbar> 
+ </ion-header> 
+
+ <ion-list-header> 
+  <h2>แบบคัดกรองโควิด 19(COVID-19)</h2>
+</ion-list-header>  
+
+ <ion-content padding="" color="light"> 
+  <ion-card-content>
+    คำอธิบายแบบคัดกรองท่านสามารถทำแบบคัดกรองผู้ป่วย COVID-19 คัดกรองผ่าน Ifightcovid19 App หากท่านไม่มีความประสงค์จะเข้ารับการคัดกรอง กรุณาปิดแล้วออกจากหน้านี้
+    กรุณาเลือกเพียงหนึ่งคำตอบจากตัวเลือกที่ปรากฏ
+    
+  </ion-card-content>
+  <div class="wrapper ">
+  <ion-checkbox checked="true"></ion-checkbox>
+</div>
+  <ion-card-content>
+    ข้าพเจ้ารับทราบคำอธิบายแบบคัดกรองและต้องการเข้ารับการคัดกรองCOVID-19
+  </ion-card-content>
+
+  <div> 
+  <ion-button (click)="showConfirm()" expand="block">ลงเบียน</ion-button> 
+  </div>
+ </ion-content>    

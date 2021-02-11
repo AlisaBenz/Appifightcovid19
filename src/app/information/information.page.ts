@@ -35,7 +35,8 @@ export class InformationPage implements OnInit {
       
 
     }
-
+    ngOnInit() {
+    }
     showChart(){
       let count1x = this.screeningquestion[0].count1 ;
       let count2x = this.screeningquestion[1].count2 ;
@@ -112,6 +113,5 @@ export class InformationPage implements OnInit {
                         if(data != null){
                           this.patientnow = data;}},error=>{console.log("load fial.")});
                         }       
-  ngOnInit() {
-  }
+  
 }

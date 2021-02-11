@@ -20,7 +20,9 @@ export class HealthformPage implements OnInit {
     public alertController: AlertController) { }
 
 
-
+    ngOnInit() {
+    }
+  
   savehealthform(){
     let url = 'http://localhost/db_ifightcovid19/insertdatahealthquestion.php'
 
@@ -32,13 +34,11 @@ export class HealthformPage implements OnInit {
       if(call.status == 200){
       }else{}});
     //   const alert = document.createElement('ion-alert');
-    // alert.message = 'บันทึกรายการเสร็จสมบูรณ์';
-    // alert.buttons = ['ตกลง'];
-    // document.body.appendChild(alert);
-    // return alert.present();
+    //  alert.message = 'บันทึกรายการเสร็จสมบูรณ์';
+    //  alert.buttons = ['ตกลง'];
+    //  document.body.appendChild(alert);
+    //  return alert.present();
   }
 
-  ngOnInit() {
-  }
 
 }

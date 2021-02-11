@@ -1,26 +1,26 @@
-<ion-header>
-  <ion-toolbar color = "primary">
-    <ion-title>ไอรู้สู้โควิด ถาม-ตอบ</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-</ion-content>
-
+  <ion-header translucent>
+    <ion-toolbar color = "primary">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/screeningresult"></ion-back-button>
+      </ion-buttons>
+      <ion-title>ไอรู้สู้โควิด ถาม-ตอบ</ion-title>
+    </ion-toolbar>
+  </ion-header>
   
-<ion-tab-bar color="primary" slot="bottom">
-  <ion-tab-button routerLink="/screeningresult">
-    <ion-icon name="person"></ion-icon>
-    <ion-label>ข้อมูล</ion-label>
-  </ion-tab-button>
+  <ion-content padding>
+  
+    <input ion-text type="text" [(ngModel)]="question">
+  
+    <button ion-button (click)="ask(question)">
+      Ask
+    </button>
+  
+    <!-- <div>
+      {{answer}}
+    </div>
+   -->
+   <div *ngFor="let answer of answers">
+    {{answer}}
+  </div>
+  </ion-content>
 
-  <ion-tab-button routerLink="/chatbot">
-    <ion-icon name="chatbubbles"></ion-icon>
-    <ion-label>แชท</ion-label>
-  </ion-tab-button>
-
-  <ion-tab-button routerLink="/form14day" >
-    <ion-icon name="clipboard"></ion-icon>
-    <ion-label>บันทึกฟอร์ม</ion-label>
-  </ion-tab-button>
-</ion-tab-bar>

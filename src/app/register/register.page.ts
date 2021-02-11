@@ -20,17 +20,17 @@ export class RegisterPage implements OnInit {
     public navParams: NavParams,
     public alertController: AlertController) { }
 
-  savesmember(){
-    let url = 'http://localhost/db_ifightcovid19/insertdatamember.php'
+  saveusers(){
+    let url = 'http://localhost/db_ifightcovid19/insertdatausersmember.php'
 
     let postdataset = new FormData();
     postdataset.append('name',this.insertdata.name);
     postdataset.append('lastname',this.insertdata.lastname);
-    postdataset.append('date',this.insertdata.date);
+    postdataset.append('date_brithday',this.insertdata.date_brithday);
     postdataset.append('personid',this.insertdata.personid);
     postdataset.append('address',this.insertdata.address);
     postdataset.append('district',this.insertdata.district);
-    postdataset.append('sum_district',this.insertdata.sum_district);
+    postdataset.append('sub_district',this.insertdata.sub_district);
     postdataset.append('provine',this.insertdata.provine);
     postdataset.append('phone',this.insertdata.phone);
     let callback:Observable<any> = this.http.post(url,postdataset);

@@ -1,25 +1,34 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar color = "primary">
     <ion-title><ion-icon name="arrow-back-outline" routerLink="/information"></ion-icon>หน้ารายงานภาพรวม</ion-title>
   </ion-toolbar>
-</ion-header>
-  <ion-content>
-    <ion-card-header text = center> 
-      <h3>รายชื่อสถานะผู้ป่วย ที่มีสถานะปานกลาง</h3> 
-     
-      
-     </ion-card-header>
-    <ion-card-header  routerlink ="/patientmap" >
-      <ion-icon name="person"></ion-icon>
-      <ion-label>นางสุดใจ มีสุข</ion-label>
-      
-    </ion-card-header>
-  
-  
-     
-    <!-- <ion-item > -->
-  <!-- <ion-button (click)="showChart()"><h6>แสดงแผนภูมิ</h6></ion-button> -->
-  <!-- </ion-item> -->
-  <!-- <div id="chart_div"></div> -->
+</ion-header> -->
 
-  </ion-content>
+
+<ion-header translucent>
+  <ion-toolbar color = "primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/information"></ion-back-button>
+    </ion-buttons>
+    <ion-title>หน้ารายงานภาพรวม</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+    <ion-card-header text = center> 
+      รายชื่อสถานะผู้ป่วย ที่มีสถานะปานกลาง
+    </ion-card-header>
+    <ion-content>
+      <ion-card color="medium">
+      <ion-list>
+      <ion-item *ngFor="let item of mediumstatus" color = "secondary">
+        <ion-icon></ion-icon>
+        <ion-label  color="dark"><h3> {{item.screening_id}}</h3></ion-label>
+        <ion-label  color="dark"><h3>{{item.username}}</h3></ion-label> 
+        <ion-icon></ion-icon>
+      </ion-item>
+      </ion-list>
+    </ion-card>
+</ion-content>
+
+
+

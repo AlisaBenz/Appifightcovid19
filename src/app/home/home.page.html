@@ -12,15 +12,31 @@
   </ion-grid>
 
   <ion-grid >
-    <ion-row>
-  
-    </ion-row>
-    <ion-row>
-      
+    <ion-row align-items-center>
+      <ion-col>
+        <button  routerLink="/description">
+            <div>
+                <ion-icon name="newspaper-sharp" color="warning"></ion-icon><br>
+                <label>แบบคัดกรอง</label>
+            </div>
+        </button>
+    </ion-col>
+    <ion-col>
+      <button routerLink="/chatbot">
+          <div>
+              <ion-icon name="chatbox-ellipses-sharp" color="danger">
+              </ion-icon><br>
+              <label>ไอรู้สู้โควิดถามตอบ</label>
+          </div>
+      </button>
+  </ion-col>
     </ion-row>
   </ion-grid>
+ 
   <ion-row>
     <ion-col>
+      <!-- <ion-icon name="newspaper-sharp"></ion-icon> <ion-icon name="chatbox-ellipses-sharp"></ion-icon> -->
+
         <ion-button  routerLink="/register" (click)="saveloginaddmin()" type="submit" fill="solid" expand="full">
           สำหรับผู้ป่วย
         </ion-button>

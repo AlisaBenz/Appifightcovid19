@@ -8,28 +8,45 @@
   <ion-content color=""> 
     <ion-card color="success">
     <ion-list-header> 
-      ชื่อหัวข้อ 
+      คำถาม 
       </ion-list-header>  
     </ion-card>
     <ion-card>
-  <ion-label position="stacked">กรอกหัวข้อ</ion-label>
+  <ion-label position="stacked">กรอกคำถาม</ion-label>
   <ion-item>
     <ion-input type="text" value="ไม่มี" [(ngModel)]="insertdata.addform1"></ion-input>
   </ion-item>
-  <!-- <ion-input></ion-input> -->
+
 </ion-card>
+
 <ion-card color="success">
-<ion-list-header> 
-  เพิ่มคำถาม 
-  </ion-list-header>  
-</ion-card>
+  <ion-list-header> 
+    เพิ่มคำตอบ
+    </ion-list-header>  
+  </ion-card>
 <ion-card>
-<ion-label position="stacked">กรอกคำถาม</ion-label>
- <ion-item> 
-  <ion-input type="text" value="ไม่มี" [(ngModel)]="insertdata.addform2"></ion-input>
- </ion-item> 
-<!-- <ion-input></ion-input> -->
-</ion-card>
+  <ion-label position="stacked">กรอกคำตอบ</ion-label>
+   <ion-item> 
+    <ion-input   type="text" value="ไม่มี" [(ngModel)]="insertdata.addform3"></ion-input>
+   </ion-item> 
+   <ion-item> 
+    <ion-input  type="text" value="ไม่มี" [(ngModel)]="insertdata.addform4" ></ion-input>
+   </ion-item> 
+   <ion-item> 
+    <ion-input   type="text" value="ไม่มี" [(ngModel)]="insertdata.addform5"></ion-input>
+   </ion-item> 
+   <ion-item> 
+    <ion-input  type="text" value="ไม่มี" [(ngModel)]="insertdata.addform6" ></ion-input>
+   </ion-item> 
+  </ion-card>
+  
+
+
+
+
+
+
+
 
 <ion-row>
   <ion-col>
@@ -45,10 +62,6 @@
     <ion-icon name="person"></ion-icon>
     <ion-label>ข้อมูล</ion-label>
   </ion-tab-button>
-  <!-- <ion-tab-button routerLink="/patientgraph">
-    <ion-icon name="stats-chart-outline"></ion-icon>
-    <ion-label>กราฟ</ion-label>
-  </ion-tab-button> -->
 <ion-tab-button  routerLink="/patientmap">
   <ion-icon name="location-outline"></ion-icon>
   <ion-label>สถานะผู้ป่วย</ion-label>

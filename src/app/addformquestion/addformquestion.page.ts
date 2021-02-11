@@ -22,13 +22,22 @@ export class AddformquestionPage implements OnInit {
     public navParams: NavParams,
     public alertController: AlertController) { }
 
+    
+  ngOnInit() {
+  }
 
     saveaddformquestion(){
       let url = 'http://localhost/db_ifightcovid19/insertdataaddform.php'
+
+      
+
   
       let postdataset = new FormData();
       postdataset.append('addform1',this.insertdata.addform1);
-      postdataset.append('addform2',this.insertdata.addform2);
+      postdataset.append('addform3',this.insertdata.addform3);
+      postdataset.append('addform4',this.insertdata.addform4);
+      postdataset.append('addform5',this.insertdata.addform5);
+      postdataset.append('addform6',this.insertdata.addform6);
       let callback:Observable<any> = this.http.post(url,postdataset);
       callback.subscribe(call =>{
         if(call.status == 200){
@@ -43,8 +52,6 @@ export class AddformquestionPage implements OnInit {
 
 
 
-  ngOnInit() {
-  }
-
+ 
 }
 

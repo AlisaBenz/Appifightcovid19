@@ -15,6 +15,7 @@ import { NavParams} from "@ionic/angular";
 export class ScreeningPage implements OnInit {
   addformquestion: any = [];
   insertdata: any ={};
+  num: number;
   constructor(
     public navCtrl: NavController,
     public http: HttpClient,
@@ -36,6 +37,9 @@ export class ScreeningPage implements OnInit {
       postdataset.append('questionnaire6',this.insertdata.questionnaire6);
       postdataset.append('questionnaire7',this.insertdata.questionnaire7);
       postdataset.append('questionnaire8',this.insertdata.questionnaire8);
+      postdataset.append('questionnaire9',this.insertdata.questionnaire9);
+      // postdataset.append('questionnaire9',this.insertdata.questionnaire9);
+
       let callback:Observable<any> = this.http.post(url,postdataset);
       callback.subscribe(call =>{
         if(call.status == 200){
@@ -60,6 +64,7 @@ export class ScreeningPage implements OnInit {
     
       });
     }
+    
   ngOnInit() {
   }
 

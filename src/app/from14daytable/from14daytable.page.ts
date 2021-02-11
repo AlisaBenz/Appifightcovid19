@@ -20,6 +20,9 @@ export class From14daytablePage implements OnInit {
       this.loaddata()
 
     }
+    
+  ngOnInit() {
+  }
 
     loaddata(){
       let url = "http://localhost/db_ifightcovid19/loaddataform14day.php";
@@ -34,7 +37,6 @@ export class From14daytablePage implements OnInit {
     
       });
     }
-  ngOnInit() {
-  }
+ 
 
 }
