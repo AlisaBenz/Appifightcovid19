@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { Tableform14dayPageRoutingModule } from './tableform14day-routing.module';
+import { TestregisterPageRoutingModule } from './testregister-routing.module';
 
-import { Tableform14dayPage } from './tableform14day.page';
+import { TestregisterPage } from './testregister.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    Tableform14dayPageRoutingModule
+    TestregisterPageRoutingModule
   ],
-  declarations: [Tableform14dayPage]
+  declarations: [TestregisterPage]
 })
-export class Tableform14dayPageModule {}
+export class TestregisterPageModule {}

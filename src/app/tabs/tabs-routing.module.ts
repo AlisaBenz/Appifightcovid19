@@ -8,8 +8,8 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'screening',
-        loadChildren: () => import('../screening/screening.module').then(m => m.ScreeningPageModule)
+        path: '/',
+        loadChildren: () => import('../home/home.module').then(m => m.HomePageModule)
       },
       // {
       //   path: 'form14day',
@@ -30,10 +30,14 @@ const routes: Routes = [
       }
     ]
   },
+  // {
+  //   path: '',
+  //   redirectTo: '/tabs/screening',
+  //   pathMatch: 'full'
+  // },
   {
     path: '',
-    redirectTo: '/tabs/screening',
-    pathMatch: 'full'
+    loadChildren: () => import('../home/home.module').then(m => m.HomePageModule)
   }
 ];
 

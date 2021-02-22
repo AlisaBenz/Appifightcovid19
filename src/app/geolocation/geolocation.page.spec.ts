@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { Tableform14dayPage } from './tableform14day.page';
+import { GeolocationPage } from './geolocation.page';
 
-describe('Tableform14dayPage', () => {
-  let component: Tableform14dayPage;
-  let fixture: ComponentFixture<Tableform14dayPage>;
+describe('GeolocationPage', () => {
+  let component: GeolocationPage;
+  let fixture: ComponentFixture<GeolocationPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ Tableform14dayPage ],
+      declarations: [ GeolocationPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(Tableform14dayPage);
+    fixture = TestBed.createComponent(GeolocationPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

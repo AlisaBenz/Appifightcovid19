@@ -4,6 +4,7 @@ import { NavController } from '@ionic/angular';
 import { Observable } from 'rxjs';
 import { AlertController } from '@ionic/angular';
 import { NavParams} from "@ionic/angular";
+import { NgForm } from '@angular/forms';
 // import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-loginpatient',
@@ -12,12 +13,32 @@ import { NavParams} from "@ionic/angular";
   providers: [NavParams],
 })
 export class LoginpatientPage implements OnInit {
+  data: any;
+  isSubmitted = false;
   insertdata:any= [];
   constructor(    
     public navCtrl: NavController,
     public http: HttpClient,
     public navParams: NavParams,
-    public alertController: AlertController) { }
+    public alertController: AlertController) { 
+      this.data = {
+        personid: '',
+        // email: '',
+        // comment: '',
+        tos: false
+      };
+    }
+    ngOnInit() {
+    }
+    onSubmit(myForm: NgForm) {
+      this.isSubmitted = true;
+      console.log('onSubmit');
+      console.log(myForm);
+    }
+  
+    noSubmit(e) {
+      e.preventDefault();
+    }
 
     saveloginpatient(){
       let url = 'http://localhost/db_ifightcovid19/insertdataloginpatient.php'
@@ -34,8 +55,8 @@ export class LoginpatientPage implements OnInit {
       // document.body.appendChild(alert);
       // return alert.present();
     }
-    ngOnInit() {
-    }
+    // ngOnInit() {
+    // }
   
   }
   
