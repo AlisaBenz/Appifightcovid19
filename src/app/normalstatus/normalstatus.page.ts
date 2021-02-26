@@ -1,3 +1,4 @@
+// import { Component, OnInit } from '@angular/core';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {
@@ -9,13 +10,14 @@ declare var google;
 import { NavigationExtras } from '@angular/router';
 import { Router } from '@angular/router';
 
+
 @Component({
-  selector: 'app-patientgraph',
-  templateUrl: './patientgraph.page.html',
-  styleUrls: ['./patientgraph.page.scss'],
+  selector: 'app-normalstatus',
+  templateUrl: './normalstatus.page.html',
+  styleUrls: ['./normalstatus.page.scss'],
   providers: [NavParams],
 })
-export class PatientgraphPage implements OnInit {
+export class NormalstatusPage implements OnInit {
   patientgraph:any =[];
   constructor(
     public navCtrl: NavController,
@@ -45,13 +47,4 @@ export class PatientgraphPage implements OnInit {
   }
 
 }
-
-
-
-
-
-
-
-
-
 

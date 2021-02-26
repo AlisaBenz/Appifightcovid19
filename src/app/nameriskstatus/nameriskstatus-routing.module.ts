@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { GeolocationPage } from './geolocation.page';
+import { NameriskstatusPage } from './nameriskstatus.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: GeolocationPage
+    component: NameriskstatusPage
   }
 ];
 
@@ -14,4 +14,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class GeolocationPageRoutingModule {}
+export class NameriskstatusPageRoutingModule {}

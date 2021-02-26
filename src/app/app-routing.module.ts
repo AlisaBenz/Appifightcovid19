@@ -38,10 +38,10 @@ const routes: Routes = [
     path: 'patientmap',
     loadChildren: () => import('./patientmap/patientmap.module').then( m => m.PatientmapPageModule)
   },
-  {
-    path: 'patientgraph',
-    loadChildren: () => import('./patientgraph/patientgraph.module').then( m => m.PatientgraphPageModule)
-  },
+  // {
+  //   path: 'patientgraph',
+  //   loadChildren: () => import('./patientgraph/patientgraph.module').then( m => m.PatientgraphPageModule)
+  // },
   {
     path: 'screening',
     loadChildren: () => import('./screening/screening.module').then( m => m.ScreeningPageModule)
@@ -54,10 +54,6 @@ const routes: Routes = [
     path: 'loginpatient',
     loadChildren: () => import('./loginpatient/loginpatient.module').then( m => m.LoginpatientPageModule)
   },
-  // {
-  //   path: 'tableform14day',
-  //   loadChildren: () => import('./tableform14day/tableform14day.module').then( m => m.Tableform14dayPageModule)
-  // },
   {
     path: 'from14daytable',
     loadChildren: () => import('./from14daytable/from14daytable.module').then( m => m.From14daytablePageModule)
@@ -83,13 +79,33 @@ const routes: Routes = [
     loadChildren: () => import('./veryriskystatus/veryriskystatus.module').then( m => m.VeryriskystatusPageModule)
   },
   {
-    path: 'geolocation',
-    loadChildren: () => import('./geolocation/geolocation.module').then( m => m.GeolocationPageModule)
+    path: 'namenormal',
+    loadChildren: () => import('./namenormal/namenormal.module').then( m => m.NamenormalPageModule)
   },
   {
-    path: 'testregister',
-    loadChildren: () => import('./testregister/testregister.module').then( m => m.TestregisterPageModule)
+    path: 'checkuser',
+    loadChildren: () => import('./checkuser/checkuser.module').then( m => m.CheckuserPageModule)
   },
+  {
+    path: 'namemediumstatus',
+    loadChildren: () => import('./namemediumstatus/namemediumstatus.module').then( m => m.NamemediumstatusPageModule)
+  },
+  {
+    path: 'nameriskstatus',
+    loadChildren: () => import('./nameriskstatus/nameriskstatus.module').then( m => m.NameriskstatusPageModule)
+  },
+  {
+    path: 'nameveryriskstatus',
+    loadChildren: () => import('./nameveryriskstatus/nameveryriskstatus.module').then( m => m.NameveryriskstatusPageModule)
+  },
+  {
+    path: 'normalstatus',
+    loadChildren: () => import('./normalstatus/normalstatus.module').then( m => m.NormalstatusPageModule)
+  },
+  // {
+  //   path: 'name',
+  //   loadChildren: () => import('./name/name.module').then( m => m.NamePageModule)
+  // },
 
 ];
 @NgModule({

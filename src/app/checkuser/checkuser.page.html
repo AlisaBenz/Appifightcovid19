@@ -1,0 +1,34 @@
+
+
+<ion-header translucent>
+  <ion-toolbar color = "primary"  >   
+    <ion-buttons (click) ="logout(item)" slot="end" >
+      <ion-icon name="log-out-outline"></ion-icon> 
+      
+    </ion-buttons>
+  
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-card *ngFor="let item of datausersmember" color="warning">
+      <ion-card-header>   
+        <h4> ข้อมูลผู้ใช้งาน<b> </b></h4>   
+      </ion-card-header>
+      <ion-card-content><ion-icon name="person" color ="medium"></ion-icon>
+        <h4>ชื่อ: <b>{{item.name}} </b></h4>
+        <h4>นามสกุล: <b>{{item.lastname}}</b></h4>
+        <h4>รหัสบัตรประชาชน: <b>{{item.personid}}</b></h4>
+        <h4>วันเดือนปีเกิด: <b>{{item.date_brithday}}</b></h4>
+        <h4>ที่อยู่: <b>{{item.address}} </b></h4>
+        <h4>ตำบล: <b>{{item.district}}</b></h4> 
+        <h4>อำเภอ: <b>{{item.sub_district}}</b></h4>
+        <h4>จังหวัด: <b>{{item.provine}}</b></h4>
+        <h4>เบอร์โทรศัพท์: <b> {{item.phone}} </b></h4>
+      </ion-card-content>
+    </ion-card>
+
+      <ion-col size="6"  > <ion-button routerLink="/description" color="primary" >เข้าสู่หน้าการคัดกรอง</ion-button>
+      </ion-col>
+
+
+    

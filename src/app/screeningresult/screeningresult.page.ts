@@ -19,6 +19,10 @@ export class ScreeningresultPage implements OnInit {
     public alertController: AlertController) { 
       this.loaddata()
     }
+
+    ngOnInit() {
+    }
+  
     loaddata(){
       let url = "http://localhost/db_ifightcovid19/loaddatascreening.php";
       this.http.get(url)
@@ -32,7 +36,7 @@ export class ScreeningresultPage implements OnInit {
     
       });
     }
-  ngOnInit() {
-  }
+  // ngOnInit() {
+  // }
 
 }

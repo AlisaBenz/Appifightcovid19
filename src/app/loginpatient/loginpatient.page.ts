@@ -14,6 +14,7 @@ import { NgForm } from '@angular/forms';
 })
 export class LoginpatientPage implements OnInit {
   data: any;
+  dataitem: any = [];
   isSubmitted = false;
   insertdata:any= [];
   constructor(    
@@ -23,8 +24,6 @@ export class LoginpatientPage implements OnInit {
     public alertController: AlertController) { 
       this.data = {
         personid: '',
-        // email: '',
-        // comment: '',
         tos: false
       };
     }
@@ -39,11 +38,59 @@ export class LoginpatientPage implements OnInit {
     noSubmit(e) {
       e.preventDefault();
     }
+    checklogin(){
+      const alert = document.createElement('ion-alert');
+      alert.message = 'คุณต้องเข้าสู่ระบบ หรือไม่?';
+      alert.buttons = [
+        {
+          text: 'ยกเลิก',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'ใช่',
+          handler: () => {
+            this.loaddata();
+            
+          }
+        }
+        
+      ];
+        document.body.appendChild(alert);
+        return alert.present()
+
+    }
+    loaddata(){
+      let url = "http://localhost/db_ifightcovid19/loadlogin.php";
+      this.http.get(url)
+      .subscribe(data=> {
+        if(data != null){
+          this.dataitem = data;
+          console.log("done.",data);
+          this.navCtrl.navigateRoot('/checkuser');
+        }
+      },error=>{
+        console.log("load fial.")
+        const alert = document.createElement('ion-alert');
+        alert.message = 'รหัสผ่านไม่ถูกต้อง! โปรดลองอีกครั้ง';
+        alert.buttons = [
+        {
+          text: 'ตกลง',
+          handler: () => {
+          }
+        }
+      ];
+        document.body.appendChild(alert);
+        return alert.present()
+    
+      });
+    }
 
     saveloginpatient(){
       let url = 'http://localhost/db_ifightcovid19/insertdataloginpatient.php'
       let postdataset = new FormData();
-
       postdataset.append('personid',this.insertdata.personid);
       let callback:Observable<any> = this.http.post(url,postdataset);
       callback.subscribe(call =>{
@@ -54,6 +101,7 @@ export class LoginpatientPage implements OnInit {
       // alert.buttons = ['ตกลง'];
       // document.body.appendChild(alert);
       // return alert.present();
+      this.checklogin()
     }
     // ngOnInit() {
     // }

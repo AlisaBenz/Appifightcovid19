@@ -39,13 +39,16 @@ export class Form14dayPage implements OnInit {
      }).catch((error) => {
        console.log('Error getting location', error);
      });
+
+    //  const timeout = 2000;
+    //  setInterval(function(){ 
+    //   console.log("Oooo Yeaaa!");
+    // }, timeout);//run this thang every 2 seconds
   }
 
   saveform14day() {
     let url = 'http://localhost/db_ifightcovid19/insertdata.php'
-
     let postdataset = new FormData();
-    
     postdataset.append('symptom1', this.insertdata.symptom1);
     postdataset.append('symptom2', this.insertdata.symptom2);
     postdataset.append('symptom3', this.insertdata.symptom3);
@@ -79,6 +82,15 @@ export class Form14dayPage implements OnInit {
   }
 
 
+
+
+  // setDayOut() {
+  //   const timeout = 2000;
+  //   setTimeout(() => {
+  //     window.alert('HEllo');
+  //     console.log('timeout');
+  //   }, timeout);
+  // }
 }
 
 

@@ -23,7 +23,9 @@ export class ScreeningPage implements OnInit {
     public alertController: AlertController) { 
       this.loaddata()
     }
-
+    ngOnInit() {
+    }
+  
 
 
     savescreening(){
@@ -65,7 +67,7 @@ export class ScreeningPage implements OnInit {
       });
     }
     
-  ngOnInit() {
-  }
+  // ngOnInit() {
+  // }
 
 }
