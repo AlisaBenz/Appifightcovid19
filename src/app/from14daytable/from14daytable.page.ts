@@ -37,6 +37,24 @@ export class From14daytablePage implements OnInit {
     
       });
     }
+
+
+//  Delectdata(id=number){
+//  let url = "http://localhost/db_ifightcovid19/delectform14day.php";
+//          let postdata =  new FormData()
+//          this.http.post(url)
+       
+//        .subscribe(data=> {
+//          if(data != null){
+//            this.dataform14day = data;
+//            console.log("done.",data);
+//          }
+//        },error=>{
+//          console.log("load fial.")
+    
+//       });
+//     }
+ 
  
 
 }
