@@ -12,6 +12,7 @@ import { NavParams} from "@ionic/angular";
 })
 export class ScreeningresultPage implements OnInit {
   datascreening:any =[];
+  user_id:any;
   constructor(
     public navCtrl: NavController,
     public http: HttpClient,
@@ -24,8 +25,9 @@ export class ScreeningresultPage implements OnInit {
     }
   
     loaddata(){
+      this.user_id = sessionStorage.getItem('user_id')
       let url = "http://localhost/db_ifightcovid19/loaddatascreening.php";
-      this.http.get(url)
+      this.http.get(url + "/?id=" + this.user_id)
       .subscribe(data=> {
         if(data != null){
           this.datascreening = data;

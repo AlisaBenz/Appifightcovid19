@@ -15,10 +15,10 @@ const routes: Routes = [
       //   path: 'form14day',
       //   loadChildren: () => import('../form14day/form14day.module').then(m => m.Form14dayPageModule)
       // },
-      {
-        path: 'chatbot',
-        loadChildren: () => import('../chatbot/chatbot.module').then(m => m.ChatbotPageModule)
-      },
+      // {
+      //   path: 'chatbot',
+      //   loadChildren: () => import('../chatbot/chatbot.module').then(m => m.ChatbotPageModule)
+      // },
       {
         path: 'form14day',
         loadChildren: () => import('../form14day/form14day.module').then(m => m.Form14dayPageModule)

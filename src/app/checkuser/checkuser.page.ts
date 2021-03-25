@@ -13,6 +13,7 @@ import { Router} from '@angular/router'
 })
 export class CheckuserPage implements OnInit {
   datausersmember:any =[];
+  user_id: string; // รับค่า user_id จาก sessionStorage
   send: number=3 ;
   constructor(
     public navCtrl: NavController,
@@ -21,15 +22,16 @@ export class CheckuserPage implements OnInit {
     public router:Router,
     public alertController: AlertController) { 
       this.loaddata()
-
     }
     
   ngOnInit() {
+    
   }
 
     loaddata(){
       let url = "http://localhost/db_ifightcovid19/loaddatausersmember.php";
-      this.http.get(url)
+      this.user_id = sessionStorage.getItem('user_id') // รับค่า user_id จาก sessionStorage
+      this.http.get(url + "/?id=" + this.user_id)
       .subscribe(data=> {
         if(data != null){
           this.datausersmember = data;
@@ -40,22 +42,33 @@ export class CheckuserPage implements OnInit {
     
       });
     }
-    logout(item:number=2){
-      let url = 'http://localhost/db_ifightcovid19/logout.php'
-      let postdataset = new FormData();
-      postdataset.append('send',item.toString());
-      let callback:Observable<any> = this.http.post(url,postdataset);
-      callback.subscribe(call =>{
-        if(call.status == 200){
-        }else{}});
-      //   const alert = document.createElement('ion-alert');
-      // alert.message = 'บันทึกรายการเสร็จสมบูรณ์';
-      // alert.buttons = ['ตกลง'];
-      // document.body.appendChild(alert);
-      // return alert.present();
+    logout(){
+      const alert = document.createElement('ion-alert');
+      alert.message = 'ออกจากระบบ?';
+      alert.buttons = [
+        {
+          text: 'ยกเลิก',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'ใช่',
+          handler: () => {
+            this.cleartoken();
+            
+          }
+        }
+        
+      ];
+        document.body.appendChild(alert);
+        return alert.present()
+    }
+    cleartoken(){
+      window.sessionStorage.clear()
       this.gotopage()
     }
-  
     gotopage(){
       this.router.navigate(['home'])
     }

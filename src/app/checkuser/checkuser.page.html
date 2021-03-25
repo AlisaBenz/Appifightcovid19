@@ -2,7 +2,7 @@
 
 <ion-header translucent>
   <ion-toolbar color = "primary"  >   
-    <ion-buttons (click) ="logout(item)" slot="end" >
+    <ion-buttons (click) ="logout()" slot="end" >
       <ion-icon name="log-out-outline"></ion-icon> 
       
     </ion-buttons>
@@ -26,6 +26,7 @@
         <h4>เบอร์โทรศัพท์: <b> {{item.phone}} </b></h4>
       </ion-card-content>
     </ion-card>
+    
 
       <ion-col size="6"  > <ion-button routerLink="/description" color="primary" >เข้าสู่หน้าการคัดกรอง</ion-button>
       </ion-col>

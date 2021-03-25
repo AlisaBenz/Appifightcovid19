@@ -5,6 +5,7 @@ import {
   NavParams,
   AlertController,
 } from "@ionic/angular";
+import { Router } from '@angular/router';
 declare var google;
 
 @Component({
@@ -25,6 +26,7 @@ export class InformationPage implements OnInit {
   constructor( public navCtrl: NavController,
     public navParams: NavParams,
     public http: HttpClient,
+    public router:Router,
     public alertCtrl: AlertController) { 
       this.loaddata();
       this.loaddatacount1();
@@ -112,6 +114,37 @@ export class InformationPage implements OnInit {
                       .subscribe(data=> {
                         if(data != null){
                           this.patientnow = data;}},error=>{console.log("load fial.")});
-                        }       
+                        }  
+                        logout(){
+                          const alert = document.createElement('ion-alert');
+                          alert.message = 'ออกจากระบบ?';
+                          alert.buttons = [
+                            {
+                              text: 'ยกเลิก',
+                              role: 'cancel',
+                              handler: () => {
+                                console.log('Cancel clicked');
+                              }
+                            },
+                            {
+                              text: 'ใช่',
+                              handler: () => {
+                                this.cleartoken();
+                                
+                              }
+                            }
+                            
+                          ];
+                            document.body.appendChild(alert);
+                            return alert.present()
+                        }
+                        cleartoken(){
+                          window.sessionStorage.clear()
+                          this.gotopage()
+                        }
+                        gotopage(){
+                          this.router.navigate(['home'])
+                        }
+                         
   
 }

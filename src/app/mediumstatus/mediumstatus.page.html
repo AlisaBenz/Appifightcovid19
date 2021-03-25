@@ -1,10 +1,3 @@
-<!-- <ion-header>
-  <ion-toolbar color = "primary">
-    <ion-title><ion-icon name="arrow-back-outline" routerLink="/information"></ion-icon>หน้ารายงานภาพรวม</ion-title>
-  </ion-toolbar>
-</ion-header> -->
-
-
 <ion-header translucent>
   <ion-toolbar color = "primary">
     <ion-buttons slot="start">
@@ -13,23 +6,21 @@
     <ion-title>หน้ารายงานภาพรวม</ion-title>
   </ion-toolbar>
 </ion-header>
-
-    <ion-card-header text = center> 
-      รายชื่อสถานะผู้ป่วย ที่มีสถานะปานกลาง
-    </ion-card-header>
-    <ion-content>
-      <ion-card color="medium">
-      
-      <ion-list *ngFor="let item of mediumstatus">  
-        <ion-item  color="secondary"  routerLink="/namemediumstatus"> 
-        <!-- <ion-icon></ion-icon> -->
-        <ion-label  color="dark"><h3> {{item.screening_id}}</h3></ion-label>
-        <ion-label  color="dark"><h3>{{item.username}}</h3></ion-label> 
-        <!-- <ion-icon></ion-icon> -->
-      </ion-item>
-      </ion-list>
+  
+      <ion-card-header text = center> 
+        รายชื่อสถานะผู้ป่วย ที่มีสถานะปานกลาง
+      </ion-card-header>
+<ion-content>
+  <ion-card color="medium">
+        <ion-list *ngFor="let item of user_data" >
+        <ion-item  color="secondary"  (click)="routeTo(item[0].id)"> 
+          <ion-icon></ion-icon>
+          <ion-label color ="dark"><h3> {{item[0].id}}</h3></ion-label>
+          <ion-label color ="dark"><h3>{{item[0].name}} {{item[0].lastname}}</h3></ion-label> 
+          <ion-icon></ion-icon>
+        </ion-item>
+        </ion-list>
     </ion-card>
-</ion-content>
-
-
+  </ion-content>
+ 
 

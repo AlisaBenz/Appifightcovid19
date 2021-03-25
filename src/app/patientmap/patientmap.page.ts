@@ -7,6 +7,7 @@ import { NavController } from '@ionic/angular';
 import { Observable } from 'rxjs';
 import { AlertController } from '@ionic/angular';
 import { NavParams} from "@ionic/angular";
+import { GoogleMapsEvent } from '@ionic-native/google-maps';
 
 declare var google;
 
@@ -29,6 +30,8 @@ export class PatientmapPage implements OnInit {
   
   map = null;
   markers: Marker[] = [];
+  // user_id:any;
+  // Infowindow: any
 
   // constructor() {}
   
@@ -47,7 +50,7 @@ export class PatientmapPage implements OnInit {
     // create a new map by passing HTMLElement
     const mapEle: HTMLElement = document.getElementById('map');
     // create LatLng object
-    const myLatLng = {lat: 15.1228894, lng: 104.906611};
+    const myLatLng = {lat: 15.1898441, lng: 104.8578303};
     // create map
     this.map = new google.maps.Map(mapEle, {
       center: myLatLng,
@@ -61,7 +64,9 @@ export class PatientmapPage implements OnInit {
   }
 
   renderMarkers() {
-    let url = "http://localhost/db_ifightcovid19/loaddataform14day.php";
+    // this.user_id = sessionStorage.getItem('user_id')
+    let url = "http://localhost/db_ifightcovid19/loadlocationmarker.php";
+    // this.http.get(url + "/?id=" + this.user_id)
       this.http.get(url)
       .subscribe(data=> {
         if(data != null){
@@ -81,6 +86,7 @@ export class PatientmapPage implements OnInit {
         console.log(this.dataform14day[index]);
       }
   }
+  
 
   addMarker(marker) {
     return new google.maps.Marker({
@@ -88,8 +94,10 @@ export class PatientmapPage implements OnInit {
       map: this.map,
       title: 'test',
       icon:  'assets/greenmarker.png'
+      
     });
   }
+  
   addMarkerWarning(marker) {
     return new google.maps.Marker({
       position: {lat: parseFloat(marker.lat), lng: parseFloat(marker.lag)},
@@ -97,7 +105,4 @@ export class PatientmapPage implements OnInit {
       title: 'test'
     });
   }
-
 }
-
-

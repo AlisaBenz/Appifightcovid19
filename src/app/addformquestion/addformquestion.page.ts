@@ -20,7 +20,31 @@ export class AddformquestionPage implements OnInit {
     public navCtrl: NavController,
     public http: HttpClient,
     public navParams: NavParams,
-    public alertController: AlertController) { }
+    public atrCtrl: AlertController) { }
+
+    // showConfirmAlert() {
+    //   let alertConfirm = this.atrCtrl.create({
+    //     // title: 'Delete Items',
+    //     message: 'Are You Sure to delete this itemss?',
+    //     buttons: [
+    //       {
+    //         text: 'No',
+    //         role: 'cancel',
+    //         handler: () => {
+    //           console.log('No clicked');
+    //         }
+    //       },
+    //       {
+    //         text: 'Yess',
+    //         handler: () => {
+    //           console.log('Yes clicked');
+    //         }
+    //       }
+    //     ]
+    //   });
+    //   // alertConfirm.present();
+    //   await alert.present();
+    // }
 
     
   ngOnInit() {

@@ -13,6 +13,10 @@ import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { AppAvailability } from '@ionic-native/app-availability/ngx';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
+// import { HttpModule } from '@angular/http'; HttpModule,
+// import { HttpModule } from '@angular/http'; 
+// import { LocalNotifications }from '@ionic-native/local-notifications';
+//  import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,12 +25,14 @@ import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
   providers: [
     StatusBar,
     SplashScreen,
+    // LocalNotifications,
     InAppBrowser,
     AppAvailability,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     GoogleMaps,
     NativeGeocoder,
-    Geolocation
+    Geolocation,
+    HttpClientModule,
   ],
   bootstrap: [AppComponent]
 })

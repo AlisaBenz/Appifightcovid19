@@ -6,10 +6,13 @@
 <ion-list-header> 
 <h4>หน้าผลการประเมินของคุณ</h4>
 </ion-list-header>  
+<!-- <ion-icon name="happy-outline"></ion-icon> -->
+
 <ion-content>
   <ion-card  color ="light" >
   <ion-list>
-    <ion-img  style="align-items: center"  src="/assets/doctor.svg"  height='1' width='2'></ion-img>
+    
+    <ion-img  style="align-items: center"  src="/assets/doctor.svg"  height='0.1' width='0.1'></ion-img>
     <ion-item *ngFor="let item of datascreening">
       
       <!-- <ion-label><h3>{{item.username}}</h3></ion-label> -->
@@ -66,10 +69,10 @@
     <ion-label>ข้อมูล</ion-label>
   </ion-tab-button>
 
-  <ion-tab-button routerLink="/chatbot">
+  <!-- <ion-tab-button routerLink="/chatbot">
     <ion-icon name="chatbubbles"></ion-icon>
     <ion-label>แชท</ion-label>
-  </ion-tab-button>
+  </ion-tab-button> -->
 
   <ion-tab-button routerLink="/form14day" >
     <ion-icon name="clipboard"></ion-icon>

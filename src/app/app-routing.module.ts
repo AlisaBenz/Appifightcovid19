@@ -6,10 +6,7 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
-  {
-    path: 'chatbot',
-    loadChildren: () => import('./chatbot/chatbot.module').then( m => m.ChatbotPageModule)
-  },
+
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
@@ -38,10 +35,6 @@ const routes: Routes = [
     path: 'patientmap',
     loadChildren: () => import('./patientmap/patientmap.module').then( m => m.PatientmapPageModule)
   },
-  // {
-  //   path: 'patientgraph',
-  //   loadChildren: () => import('./patientgraph/patientgraph.module').then( m => m.PatientgraphPageModule)
-  // },
   {
     path: 'screening',
     loadChildren: () => import('./screening/screening.module').then( m => m.ScreeningPageModule)
@@ -79,7 +72,7 @@ const routes: Routes = [
     loadChildren: () => import('./veryriskystatus/veryriskystatus.module').then( m => m.VeryriskystatusPageModule)
   },
   {
-    path: 'namenormal',
+    path: 'namenormal/:id',
     loadChildren: () => import('./namenormal/namenormal.module').then( m => m.NamenormalPageModule)
   },
   {
@@ -87,24 +80,28 @@ const routes: Routes = [
     loadChildren: () => import('./checkuser/checkuser.module').then( m => m.CheckuserPageModule)
   },
   {
-    path: 'namemediumstatus',
+    path: 'namemediumstatus/:id',
     loadChildren: () => import('./namemediumstatus/namemediumstatus.module').then( m => m.NamemediumstatusPageModule)
   },
   {
-    path: 'nameriskstatus',
+    path: 'nameriskstatus/:id',
     loadChildren: () => import('./nameriskstatus/nameriskstatus.module').then( m => m.NameriskstatusPageModule)
   },
   {
-    path: 'nameveryriskstatus',
+    path: 'nameveryriskstatus/:id',
     loadChildren: () => import('./nameveryriskstatus/nameveryriskstatus.module').then( m => m.NameveryriskstatusPageModule)
   },
   {
     path: 'normalstatus',
     loadChildren: () => import('./normalstatus/normalstatus.module').then( m => m.NormalstatusPageModule)
   },
+  {
+    path: 'testmap',
+    loadChildren: () => import('./testmap/testmap.module').then( m => m.TestmapPageModule)
+  },
   // {
-  //   path: 'name',
-  //   loadChildren: () => import('./name/name.module').then( m => m.NamePageModule)
+  //   path: 'notification',
+  //   loadChildren: () => import('./notification/notification.module').then( m => m.NotificationPageModule)
   // },
 
 ];

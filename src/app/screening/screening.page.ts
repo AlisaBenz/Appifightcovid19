@@ -13,8 +13,10 @@ import { NavParams } from "@ionic/angular";
   providers: [NavParams],
 })
 export class ScreeningPage implements OnInit {
+  user_id: any; // รับค่า user_id จาก sessionStorage
+  send: number=3 ; ///
   addformquestion: any = [];
-  insertdata: any = {};
+  insertdata: any = [];
   question_list = []
   list = {
     question: '',
@@ -41,8 +43,10 @@ export class ScreeningPage implements OnInit {
     })
   }
 
-  savescreening() {
+  savescreening1() {
     let url = 'http://localhost/db_ifightcovid19/insertdatascreening.php'
+    this.user_id = sessionStorage.getItem('user_id') // รับค่า user_id จาก sessionStorage
+    this.http.get(url + "/?id=" + this.user_id)  ///
     let postdataset = new FormData();
     postdataset.append('questionnaire1', this.insertdata.questionnaire1);
     postdataset.append('questionnaire2', this.insertdata.questionnaire2);
@@ -52,8 +56,8 @@ export class ScreeningPage implements OnInit {
     postdataset.append('questionnaire6', this.insertdata.questionnaire6);
     postdataset.append('questionnaire7', this.insertdata.questionnaire7);
     postdataset.append('questionnaire8', this.insertdata.questionnaire8);
-    postdataset.append('questionnaire9', this.insertdata.questionnaire9);
     postdataset.append('selected',this.insertdata.selected);
+    postdataset.append('user_id',this.user_id);
     // postdataset.append('questionnaire9',this.insertdata.questionnaire9);
 
     let callback: Observable<any> = this.http.post(url, postdataset);
@@ -70,6 +74,8 @@ export class ScreeningPage implements OnInit {
 
   loaddata() {
     let url = "http://localhost/db_ifightcovid19/loaddataaddform.php";
+    this.user_id = sessionStorage.getItem('user_id') // รับค่า user_id จาก sessionStorage
+    this.http.get(url + "/?id=" + this.user_id)   ///
     this.http.get(url)
       .subscribe(data => {
         if (data != null) {
@@ -91,7 +97,5 @@ export class ScreeningPage implements OnInit {
       });
   }
 
-  // ngOnInit() {
-  // }
 
 }

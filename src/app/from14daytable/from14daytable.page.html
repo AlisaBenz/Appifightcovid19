@@ -4,25 +4,44 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/form14day"></ion-back-button>
     </ion-buttons>
-    <ion-title>ข้อมูลบันทึกฟอร์ม14วัน</ion-title>
+    <ion-title> ข้อมูลบันทึกฟอร์ม14วัน</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <!-- <ion-list> -->
+  <ion-card-header text = center> 
+    <h3> แสดงรายละเอียดข้อมูล14วัน </h3>
+  </ion-card-header>
+  <ion-card *ngFor="let item of dataform14day; let i = index" color="success">
+    <ion-card-content><ion-icon name="happy-outline" color ="danger"></ion-icon> 
+      <h4>Day : <b>{{ i + 1 }}</b></h4>
+      <h4>วันที่ :<b>{{item.date}} </b></h4>
+      <h4>สถานะ :<b>{{item.status}} </b></h4>
+    
+    </ion-card-content>
+  </ion-card>
+  <ion-tab-bar color="primary" slot="bottom">
+  </ion-tab-bar>
+
+
+
+<!-- 
+<ion-content>
+
     <ion-card-header text = center> 
       แสดงรายละเอียดข้อมูล14วัน
     </ion-card-header>
 
       <ion-item *ngFor="let item of dataform14day">
         <ion-icon name="time-outline" color="warning"></ion-icon>
-        <!-- <ion-label><h3>{{item.username}}</h3></ion-label> -->
+
         <p >{{item.date}} </p>
-        <ion-icon name="person" color = "medium"></ion-icon>
+       <ion-icon name="happy-outline" color= "danger"></ion-icon>
+
 
         <ion-label><h3> {{item.status}}</h3></ion-label>
       </ion-item>
-      <!-- </ion-list> -->
-</ion-content>
+      
+</ion-content> -->
   
-<ion-tab-bar color="primary" slot="bottom">
-</ion-tab-bar>
+<!-- <ion-tab-bar color="primary" slot="bottom">
+</ion-tab-bar> -->

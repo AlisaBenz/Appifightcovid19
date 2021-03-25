@@ -12,6 +12,8 @@ import { NavParams} from "@ionic/angular";
 })
 export class From14daytablePage implements OnInit {
   dataform14day:any =[];
+  user_id:any;
+  // public x =0;
   constructor(
     public navCtrl: NavController,
     public http: HttpClient,
@@ -25,8 +27,9 @@ export class From14daytablePage implements OnInit {
   }
 
     loaddata(){
+      this.user_id = sessionStorage.getItem('user_id')
       let url = "http://localhost/db_ifightcovid19/loaddataform14day.php";
-      this.http.get(url)
+      this.http.get(url + "/?id=" + this.user_id)
       .subscribe(data=> {
         if(data != null){
           this.dataform14day = data;
@@ -38,23 +41,19 @@ export class From14daytablePage implements OnInit {
       });
     }
 
-
-//  Delectdata(id=number){
-//  let url = "http://localhost/db_ifightcovid19/delectform14day.php";
-//          let postdata =  new FormData()
-//          this.http.post(url)
-       
-//        .subscribe(data=> {
-//          if(data != null){
-//            this.dataform14day = data;
-//            console.log("done.",data);
-//          }
-//        },error=>{
-//          console.log("load fial.")
+    loaddatadelect(){ ///ลบข้อมูลออกจากฐานข้อมูลทุก15วัน
+      let url = "http://localhost/db_ifightcovid19/loaddelectform.php";
+      this.http.get(url)
+      .subscribe(data=> {
+        if(data != null){
+          this.dataform14day = data;
+          console.log("done.",data);
+        }
+      },error=>{
+        console.log("load fial.")
     
-//       });
-//     }
- 
+      });
+    }
  
 
 }

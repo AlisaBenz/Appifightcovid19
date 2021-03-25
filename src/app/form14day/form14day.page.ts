@@ -19,18 +19,14 @@ export class Form14dayPage implements OnInit {
   longitude: any = 0; //longitude
 
   insertdata: any = {};
+  user_id: any;
+  // user_id: string;
   constructor(
     public navCtrl: NavController,
     public http: HttpClient,
     public navParams: NavParams,
     public alertController: AlertController,
     private geolocation: Geolocation) { }
-
-    options = {
-      timeout: 10000, 
-      enableHighAccuracy: true, 
-      maximumAge: 3600
-    };
 
   ngOnInit() {
     this.geolocation.getCurrentPosition().then((resp) => {
@@ -39,15 +35,13 @@ export class Form14dayPage implements OnInit {
      }).catch((error) => {
        console.log('Error getting location', error);
      });
-
-    //  const timeout = 2000;
-    //  setInterval(function(){ 
-    //   console.log("Oooo Yeaaa!");
-    // }, timeout);//run this thang every 2 seconds
   }
 
   saveform14day() {
     let url = 'http://localhost/db_ifightcovid19/insertdata.php'
+    this.user_id = sessionStorage.getItem('user_id') // รับค่า user_id จาก sessionStorage
+    this.http.get(url + "/?id=" + this.user_id)
+
     let postdataset = new FormData();
     postdataset.append('symptom1', this.insertdata.symptom1);
     postdataset.append('symptom2', this.insertdata.symptom2);
@@ -58,39 +52,40 @@ export class Form14dayPage implements OnInit {
     postdataset.append('symptom7', this.insertdata.symptom7);
     postdataset.append('lat', this.latitude);
     postdataset.append('lng', this.longitude);
+    postdataset.append('user_id',this.user_id);
 
     let callback: Observable<any> = this.http.post(url, postdataset);
-
-
-    callback.subscribe(async (call) => {
-      const alertSt = document.createElement('ion-alert');
-      alertSt.message = call;
-      alertSt.buttons = ['ตกลง'];
-      document.body.appendChild(alertSt);
-      alertSt.present();
-
-      const alert = document.createElement('ion-alert');
-      alert.message = 'บันทึกรายการเสร็จสมบูรณ์';
-      alert.buttons = ['ตกลง'];
-      document.body.appendChild(alert);
-      await alert.present();
-      
-      console.log(call);
-
+    callback.subscribe(call => {
+      if (call.status == 200) {
+      } else { }
     });
-
+    const alert = document.createElement('ion-alert');
+    alert.message = 'บันทึกรายการเสร็จสมบูรณ์';
+    alert.buttons = ['ตกลง'];
+    document.body.appendChild(alert);
+    return alert.present();
   }
 
+  //   callback.subscribe(async (call) => {   ///call back ข้อมูลกลับมา
+  //     const alertSt = document.createElement('ion-alert');
+  //     alertSt.message = call;
+  //     alertSt.buttons = ['ตกลง'];
+  //     document.body.appendChild(alertSt);
+  //     alertSt.present();
 
+  //     const alert = document.createElement('ion-alert');
+  //     alert.message = 'บันทึกรายการเสร็จสมบูรณ์';
+  //     alert.buttons = ['ตกลง'];
+  //     document.body.appendChild(alert);
+  //     await alert.present();
+      
+  //     console.log(call);
 
+  //   });
 
-  // setDayOut() {
-  //   const timeout = 2000;
-  //   setTimeout(() => {
-  //     window.alert('HEllo');
-  //     console.log('timeout');
-  //   }, timeout);
   // }
+
+
 }
 
 
