@@ -7,6 +7,7 @@ import {
 } from "@ionic/angular";
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 declare var google;
 
 
@@ -18,6 +19,8 @@ declare var google;
 })
 export class NameriskstatusPage implements OnInit {
   nameriskstatus: any = [];
+  insertdata:any=[];
+  updatestatus: string;
   id: any;
   user_data={
     name:'',
@@ -46,19 +49,7 @@ export class NameriskstatusPage implements OnInit {
 
   }
 
-  // loaddata() {
-  //   let url = "http://localhost/db_ifightcovid19/loaddatanamenormal.php";
-  //   this.http.get(url)
-  //     .subscribe(data => {
-  //       if (data != null) {
-  //         this.namenormal = data;
-  //         console.log("done.", data);
-  //       }
-  //     }, error => {
-  //       console.log("load fial.")
 
-  //     });
-  // }
   ngOnInit() {
     let url = "http://localhost/db_ifightcovid19/load1.php";
     this.route.params.subscribe(params => {
@@ -81,5 +72,35 @@ export class NameriskstatusPage implements OnInit {
      
 
     })
+  };
+
+  saveupdatestatus(){
+    const header = 'Content-Type';
+    let url = 'http://localhost/db_ifightcovid19/updatestatus.php'
+    //  this.http.get(url + "/?id=" + this.user_id)
+    let headers = new Headers();
+      headers.append('Access-Control-Allow-Origin', '*');
+      headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
+      headers.append('Accept', 'application/json');
+      headers.append('content-type', 'application/json');
+
+    let postdataset = new FormData();
+    postdataset.append('updatestatus',this.insertdata.updatestatus);
+    // postdataset.append('id',this.user_id);
+    postdataset.append('id',this.id);
+    const id= this.id;
+    const updatestatus = this.updatestatus;
+
+    this.http.post(url+'/'+id,postdataset ).subscribe(result =>{
+      console.log(result);
+    })
+    const alert = document.createElement('ion-alert');
+     alert.message = 'บันทึกรายการเสร็จสมบูรณ์';
+     alert.buttons = ['ตกลง'];
+     document.body.appendChild(alert);
+     return alert.present();
+
+   
   }
+
 }

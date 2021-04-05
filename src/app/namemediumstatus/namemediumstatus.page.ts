@@ -7,6 +7,7 @@ import {
 } from "@ionic/angular";
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 declare var google;
 
 @Component({
@@ -16,9 +17,12 @@ declare var google;
   providers: [NavParams],
 })
 export class NamemediumstatusPage implements OnInit {
-
+  insertdata:any=[];
   namemediumstatus:any =[];
+  updatestatus: string;
   id: any;
+  user_id:any;
+  // user_id: any;
   user_data={
     name:'',
     lastname:'',
@@ -32,8 +36,10 @@ export class NamemediumstatusPage implements OnInit {
     disease:'',
     historyofillness:'',
     status:''
+   
     // status:''
   };
+  
   constructor(
     public navCtrl: NavController,
     public http: HttpClient,
@@ -42,27 +48,14 @@ export class NamemediumstatusPage implements OnInit {
     public alertController: AlertController,
     private route: ActivatedRoute
   ) {
-    // this.loaddata()
 
   }
 
-  // loaddata() {
-  //   let url = "http://localhost/db_ifightcovid19/loaddatanamenormal.php";
-  //   this.http.get(url)
-  //     .subscribe(data => {
-  //       if (data != null) {
-  //         this.namenormal = data;
-  //         console.log("done.", data);
-  //       }
-  //     }, error => {
-  //       console.log("load fial.")
-
-  //     });
-  // }
   ngOnInit() {
     let url = "http://localhost/db_ifightcovid19/load1.php";
     this.route.params.subscribe(params => {
       this.id = params['id'];
+      // this.user_id = params['user_id'];
     });
     this.http.get(url + "/?id=" + this.id).subscribe(datauser => {
       this.user_data.name = datauser[0].name;
@@ -77,22 +70,56 @@ export class NamemediumstatusPage implements OnInit {
       this.user_data.disease = datauser[0].disease;
       this.user_data.historyofillness = datauser[0].historyofillness;
       this.user_data.status = datauser[0].status;
-      // this.user_data.status = datauser[0].status;  
+      this.user_data.status = datauser[0].status;  
      
 
     })
-
-    // let url2 = "http://localhost/db_ifightcovid19/loadhealthform.php";
+    // let url2 = "http://localhost/db_ifightcovid19/load2.php";
     // this.route.params.subscribe(params => {
-    //   this.id = params['id'];
+    //   // this.id = params['id'];
+    //    this.user_id = params['user_id'];
     // });
-    // this.http.get(url2 + "/?id=" + this.id).subscribe(datauser => {
-    //   this.user_data.disease = datauser[0].disease;
-    //   this.user_data.historyofillness = datauser[0].historyofillness;
+    // this.http.get(url2 + "/?user_id=" + this.user_id).subscribe(datauser1 => {
+    //   this.user_data1.disease = datauser1[0].disease;
+    //   this.user_data1.historyofillness = datauser1[0].historyofillness;
+    //   this.user_data1.status = datauser1[0].status;
+    //   // this.user_data.status = datauser[0].status;  
      
 
     // })
+  };
+
+
+
+  saveupdatestatus(){
+    const header = 'Content-Type';
+    let url = 'http://localhost/db_ifightcovid19/updatestatus.php'
+    //  this.http.get(url + "/?id=" + this.user_id)
+    let headers = new Headers();
+      headers.append('Access-Control-Allow-Origin', '*');
+      headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
+      headers.append('Accept', 'application/json');
+      headers.append('content-type', 'application/json');
+
+    let postdataset = new FormData();
+    postdataset.append('updatestatus',this.insertdata.updatestatus);
+    // postdataset.append('id',this.user_id);
+    postdataset.append('id',this.id);
+    const id= this.id;
+    const updatestatus = this.updatestatus;
+
+    this.http.post(url+'/'+id,postdataset ).subscribe(result =>{
+      console.log(result);
+    })
+    const alert = document.createElement('ion-alert');
+    alert.message = 'บันทึกรายการเสร็จสมบูรณ์';
+    alert.buttons = ['ตกลง'];
+    document.body.appendChild(alert);
+    return alert.present();
+
+   
   }
-  }
+ }
+
   
 

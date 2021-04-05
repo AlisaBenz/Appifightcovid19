@@ -49,13 +49,6 @@ export class MediumstatusPage implements OnInit {
             })
           }
         }
-        //   for (let index = 0; index < this.mediumstatus.length; index++) {
-        //     this.http.get(url3 + "/?id=" + this.mediumstatus[index].user_id).subscribe(datauser => {
-        //       this.user_data.push(datauser)
-            
-        //     })
-        //   }
-        // }
       }, error => {
         console.log("load fial.")
 
@@ -68,7 +61,7 @@ export class MediumstatusPage implements OnInit {
   routeTo(id) {
     this.router.navigate(['/namemediumstatus', id])
   }
-  // namenormal
+ 
 }
 
 

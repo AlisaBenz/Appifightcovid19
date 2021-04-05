@@ -106,3 +106,5 @@ export class PatientmapPage implements OnInit {
     });
   }
 }
+
+

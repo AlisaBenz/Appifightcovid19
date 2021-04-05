@@ -7,7 +7,7 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-
+  <ion-list>
   <h4>ชื่อ: <b>{{user_data.name}}</b></h4>
   <h4>นามสกุล: <b>{{user_data.lastname}}</b></h4>
   <h4>เลขบัตรประชาชน: <b>{{user_data.personid}}</b></h4>
@@ -20,6 +20,29 @@
   <h4>โรคประจำตัว: <b>{{user_data.disease}}</b></h4>
   <h4>คือ: <b>{{user_data.historyofillness}}</b></h4>
   <h4>สถานะบันทึกฟอร์ม14วัน: <b>{{user_data.status}}</b></h4>
-  
+  <h4>อัพเดท สถานะผู้ป่วย</h4>
+  <ion-item>
+    <ion-label>เลือก</ion-label>
+    <ion-label></ion-label>
+    <ion-select  [(ngModel)]="insertdata.updatestatus" name="provine"color="warning"   okText="ตกลง" cancelText="ยกเลิก" >
+      <ion-select-option value="พยาบาลรับทราบข้อมูล">พยาบาลรับทราบข้อมูล</ion-select-option>
+      <ion-select-option value="กำลังรักษา">กำลังรักษา</ion-select-option>
+      <ion-select-option value="หายเป็นปกติแล้ว">หายเป็นปกติแล้ว</ion-select-option>
+    
+    </ion-select>
+  </ion-item>
+
+  <ion-row>
+ 
+      <ion-col>
+          <ion-button (click)="saveupdatestatus()" type="submit" fill="solid" expand="full" color="danger">
+              อัพเดทสถานะผู้ป่วย
+          </ion-button>
+      </ion-col>
+
+
+  </ion-row>
+  </ion-list>
+
 
 </ion-content>

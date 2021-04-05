@@ -7,7 +7,11 @@ import {
 } from "@ionic/angular";
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 declare var google;
+
+import { HTTP } from '@ionic-native/http/ngx'
+
 
 // import { NavigationExtras } from '@angular/router';
 
@@ -18,8 +22,11 @@ declare var google;
   providers: [NavParams],
 })
 export class NamenormalPage implements OnInit {
-
+  // load2:any=[];
+  user_id:any;
+  insertdata:any=[];
   namenormal: any = [];
+  updatestatus: string;
   id: any;
   user_data={
     name:'',
@@ -41,25 +48,11 @@ export class NamenormalPage implements OnInit {
     public navParams: NavParams,
     public router: Router,
     public alertController: AlertController,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
   ) {
     // this.loaddata()
-
   }
 
-  // loaddata() {
-  //   let url = "http://localhost/db_ifightcovid19/loaddatanamenormal.php";
-  //   this.http.get(url)
-  //     .subscribe(data => {
-  //       if (data != null) {
-  //         this.namenormal = data;
-  //         console.log("done.", data);
-  //       }
-  //     }, error => {
-  //       console.log("load fial.")
-
-  //     });
-  // }
   ngOnInit() {
     let url = "http://localhost/db_ifightcovid19/load1.php";
     this.route.params.subscribe(params => {
@@ -79,8 +72,49 @@ export class NamenormalPage implements OnInit {
       this.user_data.historyofillness = datauser[0].historyofillness;
       this.user_data.status = datauser[0].status;
       // this.user_data.status = datauser[0].status;  
-     
-
+    // console.log(this.id)
     })
+  };
+  // loaddata(){
+  //   // this.id = sessionStorage.getItem('id')
+  //   let url = "http://localhost/db_ifightcovid19/load2.php";
+  //   this.http.get(url + "/?id =" + this.user_id)
+  //   .subscribe(data=> {
+  //     if(data != null){
+  //       this.load2 = data;
+  //       console.log("done.",data);
+  //     }
+  //   },error=>{
+  //     console.log("load fial.")
+  
+  //   });
+  // }
+  saveupdatestatus(){
+    const header = 'Content-Type';
+    let url = 'http://localhost/db_ifightcovid19/updatestatus.php'
+    //  this.http.get(url + "/?id=" + this.user_id)
+    let headers = new Headers();
+      headers.append('Access-Control-Allow-Origin', '*');
+      headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
+      headers.append('Accept', 'application/json');
+      headers.append('content-type', 'application/json');
+
+    let postdataset = new FormData();
+    postdataset.append('updatestatus',this.insertdata.updatestatus);
+    // postdataset.append('id',this.user_id);
+    postdataset.append('id',this.id);
+    const id= this.id;
+    const updatestatus = this.updatestatus;
+
+    this.http.post(url+'/'+id,postdataset ).subscribe(result =>{
+      console.log(result);
+    })
+    const alert = document.createElement('ion-alert');
+    alert.message = 'บันทึกรายการเสร็จสมบูรณ์';
+    alert.buttons = ['ตกลง'];
+    document.body.appendChild(alert);
+    return alert.present();
+
+   
   }
 }

@@ -6,6 +6,7 @@ import { AlertController } from '@ionic/angular';
 import { NavParams } from "@ionic/angular";
 import { async } from '@angular/core/testing';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { Router} from '@angular/router'
 
 @Component({
   selector: 'app-form14day',
@@ -26,6 +27,7 @@ export class Form14dayPage implements OnInit {
     public http: HttpClient,
     public navParams: NavParams,
     public alertController: AlertController,
+    public router:Router,
     private geolocation: Geolocation) { }
 
   ngOnInit() {
@@ -55,35 +57,56 @@ export class Form14dayPage implements OnInit {
     postdataset.append('user_id',this.user_id);
 
     let callback: Observable<any> = this.http.post(url, postdataset);
-    callback.subscribe(call => {
-      if (call.status == 200) {
-      } else { }
+
+    callback.subscribe(async (call) => {   ///call back ข้อมูลกลับมา
+      const alertSt = document.createElement('ion-alert');
+      alertSt.message = call;
+      alertSt.buttons = ['ตกลง'];
+      document.body.appendChild(alertSt);
+      alertSt.present();
+
+      const alert = document.createElement('ion-alert');
+      alert.message = 'บันทึกรายการเสร็จสมบูรณ์';
+      alert.buttons = ['ตกลง'];
+      document.body.appendChild(alert);
+      await alert.present();
+      
+      console.log(call);
+
     });
+
+  }
+  logout(){
     const alert = document.createElement('ion-alert');
-    alert.message = 'บันทึกรายการเสร็จสมบูรณ์';
-    alert.buttons = ['ตกลง'];
-    document.body.appendChild(alert);
-    return alert.present();
+    alert.message = 'ออกจากระบบ?';
+    alert.buttons = [
+      {
+        text: 'ยกเลิก',
+        role: 'cancel',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+      },
+      {
+        text: 'ใช่',
+        handler: () => {
+          this.cleartoken();
+          
+        }
+      }
+      
+    ];
+      document.body.appendChild(alert);
+      return alert.present()
+  }
+  cleartoken(){
+    window.sessionStorage.clear()
+    this.gotopage()
+  }
+  gotopage(){
+    this.router.navigate(['home'])
   }
 
-  //   callback.subscribe(async (call) => {   ///call back ข้อมูลกลับมา
-  //     const alertSt = document.createElement('ion-alert');
-  //     alertSt.message = call;
-  //     alertSt.buttons = ['ตกลง'];
-  //     document.body.appendChild(alertSt);
-  //     alertSt.present();
-
-  //     const alert = document.createElement('ion-alert');
-  //     alert.message = 'บันทึกรายการเสร็จสมบูรณ์';
-  //     alert.buttons = ['ตกลง'];
-  //     document.body.appendChild(alert);
-  //     await alert.present();
-      
-  //     console.log(call);
-
-  //   });
-
-  // }
 
 
 }

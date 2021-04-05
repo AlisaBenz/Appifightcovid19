@@ -38,20 +38,23 @@
                                 <ion-icon  name="lock" class="icon-login"></ion-icon>
                                 <ion-input  [(ngModel)]="insertdata.password" name="password" type="password" required placeholder="Password"></ion-input>
                             </ion-item>
-    
                         </ion-list>
                     </ion-col>
                 </ion-row>
                 <ion-row>
                     <ion-col>
-                        <ion-button routerLink="/information" (click)="saveloginaddmin()" type="submit" fill="solid" expand="full">
-                            Login
-                        </ion-button>
+                          
+                        <ion-button (click) ="checklogin()"type="submit" fill="solid" expand="full">
+                          LOGIN
+                      </ion-button>
                     </ion-col>
                 </ion-row>
+                <h5>หรือ</h5>
                 <ion-row>
                     <ion-col>
-                    
+                        <ion-button routerLink="/generateuseradmin" type="submit" fill="outline" expand="block">
+                            REGISTER
+                        </ion-button>
                     </ion-col>
                 </ion-row>
             </ion-grid>

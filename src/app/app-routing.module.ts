@@ -99,6 +99,14 @@ const routes: Routes = [
     path: 'testmap',
     loadChildren: () => import('./testmap/testmap.module').then( m => m.TestmapPageModule)
   },
+  {
+    path: 'generateuseradmin',
+    loadChildren: () => import('./generateuseradmin/generateuseradmin.module').then( m => m.GenerateuseradminPageModule)
+  },
+  // {
+  //   path: 'delectuser',
+  //   loadChildren: () => import('./delectuser/delectuser.module').then( m => m.DelectuserPageModule)
+  // },
   // {
   //   path: 'notification',
   //   loadChildren: () => import('./notification/notification.module').then( m => m.NotificationPageModule)

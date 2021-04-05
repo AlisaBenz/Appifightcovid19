@@ -1,0 +1,72 @@
+
+  <ion-content>
+
+    <ion-grid class="grid1">
+    
+        <ion-row class="row1">
+            <ion-col>
+    
+            </ion-col>
+        </ion-row>
+    
+        <ion-row class="row2">
+            <ion-col>
+    
+            </ion-col>
+        </ion-row>
+    
+    </ion-grid>
+    
+    <ion-slide>
+        <div class="contaier-login">
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <h1>ลงทะเบียน</h1>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <ion-list>
+    
+                            <ion-item>
+                                <!-- <ion-icon name="person" class="icon-login"></ion-icon> -->
+                                <ion-icon name="person" class="icon-login"></ion-icon>
+                                <ion-input [(ngModel)]="insertdata.username" name="username" type="text" required placeholder="username"></ion-input>
+                            </ion-item>
+                            <br />
+                            <ion-item>
+                                <ion-icon  name="lock" class="icon-login"></ion-icon>
+                                <ion-input  [(ngModel)]="insertdata.password" name="password" type="password" required placeholder="password"></ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label  position="fixed"><h3>สถานะผู้ใช้งาน</h3></ion-label>   
+                                  <ion-label></ion-label>
+                                  <ion-select   [(ngModel)]="insertdata.role" name="role" okText="ตกลง" cancelText="ยกเลิก">
+                                    <ion-select-option value="แพทย์">แพทย์</ion-select-option>
+                                    <ion-select-option value="พยาบาล">พยาบาล</ion-select-option>
+                
+                                  </ion-select>
+                               </ion-item> 
+    
+                        </ion-list>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <ion-button  (click)="loginaddmin()" type="submit" fill="solid" expand="full">
+                            REGISTER
+                        </ion-button>
+                    </ion-col>
+                </ion-row>
+                <h5> หรือ</h5>
+                <ion-col>
+                    <ion-button routerLink="/loginadmin"  type="submit" fill="outline" expand="block">
+                        LOGIN
+                    </ion-button>
+                </ion-col>
+
+            </ion-grid>
+        </div>
+    </ion-slide>
+</ion-content>

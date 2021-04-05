@@ -84,6 +84,5 @@ export class LoginpatientPage implements OnInit {
     // return alert.present();
     // this.checklogin()
   }
-  // ngOnInit() {
-  // }
+
 }
