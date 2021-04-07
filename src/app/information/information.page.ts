@@ -45,7 +45,7 @@ export class InformationPage implements OnInit {
       let count3x = this.screeningquestion[2].count3 ;
       let count4x = this.screeningquestion[3].count4 ;
       this.saveData2 = [{count:count1x}];
-      console.log('lll',this.saveData2);
+      console.log(this.saveData2);
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Topping');
       data.addColumn('number', 'Slices');

@@ -67,26 +67,27 @@ export class NamemediumstatusPage implements OnInit {
       this.user_data.sub_district = datauser[0].sub_district;
       this.user_data.provine = datauser[0].provine;   
       this.user_data.phone = datauser[0].phone;  
-      this.user_data.disease = datauser[0].disease;
-      this.user_data.historyofillness = datauser[0].historyofillness;
-      this.user_data.status = datauser[0].status;
-      this.user_data.status = datauser[0].status;  
+
      
 
     })
-    // let url2 = "http://localhost/db_ifightcovid19/load2.php";
-    // this.route.params.subscribe(params => {
-    //   // this.id = params['id'];
-    //    this.user_id = params['user_id'];
-    // });
-    // this.http.get(url2 + "/?user_id=" + this.user_id).subscribe(datauser1 => {
-    //   this.user_data1.disease = datauser1[0].disease;
-    //   this.user_data1.historyofillness = datauser1[0].historyofillness;
-    //   this.user_data1.status = datauser1[0].status;
-    //   // this.user_data.status = datauser[0].status;  
-     
-
-    // })
+    let url_2 = 'http://localhost/db_ifightcovid19/loadhealthform.php';
+    this.http.get(url_2 +'/?id=' +this.id).subscribe(healp =>{
+      // console.log(healp[0]);
+      this.user_data.disease = healp[0].disease;
+      this.user_data.historyofillness = healp[0].historyofillness;
+    });
+    
+    let url_3 = 'http://localhost/db_ifightcovid19/loaddataform14day.php  ';
+    this.http.get(url_3 +'/?id=' +this.id).subscribe((form14) =>{
+      console.log(form14);
+      // console.log(Object.keys(form14).length);
+      const index = Object.keys(form14).length; 
+      console.log(index);
+      const form14day = form14[index-1];
+      this.user_data.status = form14day.status;
+      console.log(this.user_data.status);
+    });
   };
 
 

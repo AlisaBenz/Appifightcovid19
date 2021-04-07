@@ -92,7 +92,7 @@ export class PatientmapPage implements OnInit {
     return new google.maps.Marker({
       position: {lat: parseFloat(marker.lat), lng: parseFloat(marker.lag)},
       map: this.map,
-      title: 'test',
+      title: 'ผู้ป่วยปกติ',
       icon:  'assets/greenmarker.png'
       
     });
@@ -102,7 +102,7 @@ export class PatientmapPage implements OnInit {
     return new google.maps.Marker({
       position: {lat: parseFloat(marker.lat), lng: parseFloat(marker.lag)},
       map: this.map,
-      title: 'test'
+      title: 'ผู้ป่วยเสี่ยง'
     });
   }
 }
