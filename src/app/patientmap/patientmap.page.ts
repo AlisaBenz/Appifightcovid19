@@ -18,7 +18,7 @@ interface Marker {
   };
   title: string;
 }
-// import { Platform, NavController } from "ionic-angular";
+
 @Component({
   selector: 'app-patientmap',
   templateUrl: './patientmap.page.html',
@@ -30,10 +30,7 @@ export class PatientmapPage implements OnInit {
   
   map = null;
   markers: Marker[] = [];
-  // user_id:any;
-  // Infowindow: any
 
-  // constructor() {}
   
   constructor(
     public navCtrl: NavController,
@@ -64,9 +61,9 @@ export class PatientmapPage implements OnInit {
   }
 
   renderMarkers() {
-    // this.user_id = sessionStorage.getItem('user_id')
+   
     let url = "http://localhost/db_ifightcovid19/loadlocationmarker.php";
-    // this.http.get(url + "/?id=" + this.user_id)
+
       this.http.get(url)
       .subscribe(data=> {
         if(data != null){

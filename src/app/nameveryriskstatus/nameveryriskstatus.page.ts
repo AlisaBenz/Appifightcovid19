@@ -45,23 +45,11 @@ export class NameveryriskstatusPage implements OnInit {
     public alertController: AlertController,
     private route: ActivatedRoute
   ) {
-    // this.loaddata()
+
 
   }
 
-  // loaddata() {
-  //   let url = "http://localhost/db_ifightcovid19/loaddatanamenormal.php";
-  //   this.http.get(url)
-  //     .subscribe(data => {
-  //       if (data != null) {
-  //         this.namenormal = data;
-  //         console.log("done.", data);
-  //       }
-  //     }, error => {
-  //       console.log("load fial.")
-
-  //     });
-  // }
+  
   ngOnInit() {
     let url = "http://localhost/db_ifightcovid19/load1.php";
     this.route.params.subscribe(params => {
@@ -77,15 +65,12 @@ export class NameveryriskstatusPage implements OnInit {
       this.user_data.sub_district = datauser[0].sub_district;
       this.user_data.provine = datauser[0].provine;   
       this.user_data.phone = datauser[0].phone;     
-      // this.user_data.disease = datauser[0].disease;   
-      // this.user_data.historyofillness = datauser[0].historyofillness;     
-      // this.user_data.status = datauser[0].status;
-     
+      
 
     })
     let url_2 = 'http://localhost/db_ifightcovid19/loadhealthform.php';
     this.http.get(url_2 +'/?id=' +this.id).subscribe(healp =>{
-      // console.log(healp[0]);
+  
       this.user_data.disease = healp[0].disease;
       this.user_data.historyofillness = healp[0].historyofillness;
     });
@@ -93,7 +78,7 @@ export class NameveryriskstatusPage implements OnInit {
     let url_3 = 'http://localhost/db_ifightcovid19/loaddataform14day.php  ';
     this.http.get(url_3 +'/?id=' +this.id).subscribe((form14) =>{
       console.log(form14);
-      // console.log(Object.keys(form14).length);
+    
       const index = Object.keys(form14).length; 
       console.log(index);
       const form14day = form14[index-1];
@@ -105,7 +90,7 @@ export class NameveryriskstatusPage implements OnInit {
   saveupdatestatus(){
     const header = 'Content-Type';
     let url = 'http://localhost/db_ifightcovid19/updatestatus.php'
-    //  this.http.get(url + "/?id=" + this.user_id)
+  
     let headers = new Headers();
       headers.append('Access-Control-Allow-Origin', '*');
       headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
@@ -114,7 +99,7 @@ export class NameveryriskstatusPage implements OnInit {
 
     let postdataset = new FormData();
     postdataset.append('updatestatus',this.insertdata.updatestatus);
-    // postdataset.append('id',this.user_id);
+  
     postdataset.append('id',this.id);
     const id= this.id;
     const updatestatus = this.updatestatus;
@@ -123,7 +108,7 @@ export class NameveryriskstatusPage implements OnInit {
       console.log(result);
     })
     const alert = document.createElement('ion-alert');
-    alert.message = 'บันทึกรายการเสร็จสมบูรณ์';
+    alert.message = 'อัพเดทข้อมูลเรียบร้อยแล้ว';
     alert.buttons = ['ตกลง'];
     document.body.appendChild(alert);
     return alert.present();

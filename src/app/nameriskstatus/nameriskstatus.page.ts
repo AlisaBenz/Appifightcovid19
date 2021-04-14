@@ -114,7 +114,7 @@ export class NameriskstatusPage implements OnInit {
       console.log(result);
     })
     const alert = document.createElement('ion-alert');
-     alert.message = 'บันทึกรายการเสร็จสมบูรณ์';
+     alert.message = 'อัพเดทข้อมูลเรียบร้อยแล้ว';
      alert.buttons = ['ตกลง'];
      document.body.appendChild(alert);
      return alert.present();

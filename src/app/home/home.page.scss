@@ -5,26 +5,11 @@
 ion-icon {
     font-size: 50px;
   }
-//   ion-icon {
-//     color: blue;
-//   }
-// .contaier-login {
-//     width: 90%;
-//     padding: 10px;
-//     background: #FFFFFF;
-//     border-radius: 5px;
-//     -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
-//     -moz-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
-//     box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
-// }
 
+ion-content{
+    --background:linear-gradient(#4786ef, #f4f5f8);
+}
 
-// .row1 {
-//     height: 50%;
-//     background: -moz-linear-gradient(45deg, rgba(61, 66, 150, 1) 0%, rgba(84, 74, 171, 0.8) 100%);
-//     background: -webkit-linear-gradient(45deg, rgba(61, 66, 150, 1) 0%, rgba(84, 74, 171, 0.8) 100%);
-//     background: linear-gradient(45deg, rgba(61, 66, 150, 1) 0%, rgba(84, 74, 171, 0.8) 100%);
-// }
 
 .row2 {
     height: 50%;
@@ -45,4 +30,3 @@ ion-slide {
     position: absolute !important;
     top: 0px !important;
 }
-// .test{ width: 120px; height: 80px; }

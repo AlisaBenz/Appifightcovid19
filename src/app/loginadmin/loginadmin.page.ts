@@ -20,10 +20,10 @@ export class LoginadminPage implements OnInit {
     public http: HttpClient,
     public navParams: NavParams,
     public alertController: AlertController) { 
-      // this.loaddata()
+      
       this.data = {
         password: "",
-        // password: "",
+        
         tos: false,
       };
     }
@@ -58,10 +58,7 @@ export class LoginadminPage implements OnInit {
       );
       callback.subscribe((data) => {
         if (data !== null) {
-          // if( data[0].role=== " แพทย์"){
-          // }else{
-          //   (data[0].role==="พยาบาล")
-          // }          // console.log(5555);
+        
             window.sessionStorage.setItem("id_user", data[0].role);
             this.navCtrl.navigateRoot("/information");
 

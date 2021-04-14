@@ -95,22 +95,20 @@ const routes: Routes = [
     path: 'normalstatus',
     loadChildren: () => import('./normalstatus/normalstatus.module').then( m => m.NormalstatusPageModule)
   },
-  {
-    path: 'testmap',
-    loadChildren: () => import('./testmap/testmap.module').then( m => m.TestmapPageModule)
-  },
+
   {
     path: 'generateuseradmin',
     loadChildren: () => import('./generateuseradmin/generateuseradmin.module').then( m => m.GenerateuseradminPageModule)
   },
-  // {
-  //   path: 'delectuser',
-  //   loadChildren: () => import('./delectuser/delectuser.module').then( m => m.DelectuserPageModule)
-  // },
-  // {
-  //   path: 'notification',
-  //   loadChildren: () => import('./notification/notification.module').then( m => m.NotificationPageModule)
-  // },
+  {
+    path: 'splash',
+    loadChildren: () => import('./splash/splash.module').then( m => m.SplashPageModule)
+  },
+  {
+    path: 'homemain',
+    loadChildren: () => import('./homemain/homemain.module').then( m => m.HomemainPageModule)
+  },
+ 
 
 ];
 @NgModule({

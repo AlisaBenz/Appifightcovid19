@@ -69,20 +69,13 @@ export class LoginpatientPage implements OnInit {
     );
     callback.subscribe((data) => {
       if (data !== null) {
-        // if( data[0].role=== "ผู้ป่วย"){
+       
           window.sessionStorage.setItem("user_id", data[0].id);
           this.navCtrl.navigateRoot("/checkuser");
-        // } else{
-        // ? เป็นหมอ
-        // }
+      
       }
     });
-    //   const alert = document.createElement('ion-alert');
-    // alert.message = 'บันทึกรายการเสร็จสมบูรณ์';
-    // alert.buttons = ['ตกลง'];
-    // document.body.appendChild(alert);
-    // return alert.present();
-    // this.checklogin()
+   
   }
 
 }

@@ -90,25 +90,11 @@ export class NamenormalPage implements OnInit {
     });
 
   };
-  //
-  // loaddata(){
-  //   // this.id = sessionStorage.getItem('id')
-  //   let url = "http://localhost/db_ifightcovid19/load2.php";
-  //   this.http.get(url + "/?id =" + this.user_id)
-  //   .subscribe(data=> {
-  //     if(data != null){
-  //       this.load2 = data;
-  //       console.log("done.",data);
-  //     }
-  //   },error=>{
-  //     console.log("load fial.")
   
-  //   });
-  // }
   saveupdatestatus(){
     const header = 'Content-Type';
     let url = 'http://localhost/db_ifightcovid19/updatestatus.php'
-    //  this.http.get(url + "/?id=" + this.user_id)
+   
     let headers = new Headers();
       headers.append('Access-Control-Allow-Origin', '*');
       headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
@@ -117,7 +103,7 @@ export class NamenormalPage implements OnInit {
 
     let postdataset = new FormData();
     postdataset.append('updatestatus',this.insertdata.updatestatus);
-    // postdataset.append('id',this.user_id);
+    
     postdataset.append('id',this.id);
     const id= this.id;
     const updatestatus = this.updatestatus;
@@ -126,7 +112,7 @@ export class NamenormalPage implements OnInit {
       console.log(result);
     })
     const alert = document.createElement('ion-alert');
-    alert.message = 'บันทึกรายการเสร็จสมบูรณ์';
+    alert.message = 'อัพเดทข้อมูลเรียบร้อยแล้ว';
     alert.buttons = ['ตกลง'];
     document.body.appendChild(alert);
     return alert.present();

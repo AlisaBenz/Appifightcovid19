@@ -29,9 +29,6 @@ export class RegisterPage implements OnInit {
         personid:'',
         date_brithday:'',
         address:'',
-
-        // email: '',
-        // comment: '',
         tos: false
       };
 
@@ -74,7 +71,5 @@ export class RegisterPage implements OnInit {
     document.body.appendChild(alert);
     return alert.present();
   }
-  // ngOnInit() {
-  // }
 
 }

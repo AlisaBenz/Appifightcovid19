@@ -24,7 +24,10 @@
     <!-- ดึงข้อมูล  updatestatus มาจากคาราง user โดยส่งค่ากลับมาตาม id ที่ส่งมาใน ไฟล์ name....ผู้ป่วย ข้อมูลจะได้มาจากแพทย์พยาบาลอัพเดพข้อมูลลงใน Database ตามid  -->
   <!-- </ion-card-header> -->
   <ion-card *ngFor="let item of dataform14day; let i = index" color="success">
-    <ion-card-content><ion-icon name="happy-outline" color ="danger"></ion-icon> 
+    <ion-card-content><ion-icon name="heart-circle-outline" color ="danger"></ion-icon>
+
+
+
       <h4>Day : <b>{{ i + 1 }}</b></h4>
       <h4>วันที่ :<b>{{item.date}} </b></h4>
       <h4>สถานะ :<b>{{item.status}} </b></h4>

@@ -34,10 +34,7 @@ export class MediumstatusPage implements OnInit {
   loaddata() {
     let url = "http://localhost/db_ifightcovid19/loaddatapatientmediumstatus.php";
     let url2 = "http://localhost/db_ifightcovid19/load1.php";
-    // let url3 = "http://localhost/db_ifightcovid19/loadhealthform.php";
-
-    // this.user_id = sessionStorage.getItem('user_id') 
-    // this.http.get(url + "/?id=" + this.user_id)
+   
     this.http.get(url)
       .subscribe(data => {
         if (data != null) {
@@ -65,34 +62,4 @@ export class MediumstatusPage implements OnInit {
 }
 
 
-
-
-
-//   mediumstatus:any =[];
-//   constructor(
-//     public navCtrl: NavController,
-//     public http: HttpClient,
-//     public navParams: NavParams,
-//     public alertController: AlertController) { 
-//       this.loaddata()
-
-//     }
-
-//     loaddata(){
-//       let url = " http://localhost/db_ifightcovid19/loaddatapatientmediumstatus.php";
-//       this.http.get(url)
-//       .subscribe(data=> {
-//         if(data != null){
-//           this.mediumstatus = data;
-//           console.log("done.",data);
-//         }
-//       },error=>{
-//         console.log("load fial.")
-    
-//       });
-//     }
-//   ngOnInit() {
-//   }
-
-// }
 

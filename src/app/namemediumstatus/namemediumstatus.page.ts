@@ -55,7 +55,7 @@ export class NamemediumstatusPage implements OnInit {
     let url = "http://localhost/db_ifightcovid19/load1.php";
     this.route.params.subscribe(params => {
       this.id = params['id'];
-      // this.user_id = params['user_id'];
+     
     });
     this.http.get(url + "/?id=" + this.id).subscribe(datauser => {
       this.user_data.name = datauser[0].name;
@@ -73,7 +73,7 @@ export class NamemediumstatusPage implements OnInit {
     })
     let url_2 = 'http://localhost/db_ifightcovid19/loadhealthform.php';
     this.http.get(url_2 +'/?id=' +this.id).subscribe(healp =>{
-      // console.log(healp[0]);
+     
       this.user_data.disease = healp[0].disease;
       this.user_data.historyofillness = healp[0].historyofillness;
     });
@@ -81,7 +81,7 @@ export class NamemediumstatusPage implements OnInit {
     let url_3 = 'http://localhost/db_ifightcovid19/loaddataform14day.php  ';
     this.http.get(url_3 +'/?id=' +this.id).subscribe((form14) =>{
       console.log(form14);
-      // console.log(Object.keys(form14).length);
+     
       const index = Object.keys(form14).length; 
       console.log(index);
       const form14day = form14[index-1];
@@ -95,7 +95,7 @@ export class NamemediumstatusPage implements OnInit {
   saveupdatestatus(){
     const header = 'Content-Type';
     let url = 'http://localhost/db_ifightcovid19/updatestatus.php'
-    //  this.http.get(url + "/?id=" + this.user_id)
+   
     let headers = new Headers();
       headers.append('Access-Control-Allow-Origin', '*');
       headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
@@ -104,7 +104,7 @@ export class NamemediumstatusPage implements OnInit {
 
     let postdataset = new FormData();
     postdataset.append('updatestatus',this.insertdata.updatestatus);
-    // postdataset.append('id',this.user_id);
+    
     postdataset.append('id',this.id);
     const id= this.id;
     const updatestatus = this.updatestatus;
@@ -113,7 +113,7 @@ export class NamemediumstatusPage implements OnInit {
       console.log(result);
     })
     const alert = document.createElement('ion-alert');
-    alert.message = 'บันทึกรายการเสร็จสมบูรณ์';
+    alert.message = 'อัพเดทข้อมูลเรียบร้อยแล้ว';
     alert.buttons = ['ตกลง'];
     document.body.appendChild(alert);
     return alert.present();

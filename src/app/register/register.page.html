@@ -73,14 +73,7 @@
                       <ion-item [hidden]="f.controls.address && (f.controls.address.valid || (f.controls.address.pristine && !isSubmitted))">
                         <ion-text color="danger">*address is required</ion-text>
                       </ion-item>
-                      <!-- <ion-item *ngIf="(isSubmitted && f.controls.comment && f.controls.comment.pristine) || ((f.controls.comment) && 
-                      (f.controls.comment.dirty && f.controls.comment.errors))">
-                      <ion-text color="danger">
-                        Please enter
-                        {{ 4 - (f.controls.comment.errors.minlength ? f.controls.comment.errors.minlength.actualLength : 0)  }} more
-                        characters
-                      </ion-text>
-                    </ion-item> -->
+                  
 
                       <ion-item>
                         <ion-label  position="fixed"><h3>ตำบล</h3></ion-label>   

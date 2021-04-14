@@ -18,7 +18,7 @@ import { Router } from '@angular/router';
 })
 export class VeryriskystatusPage implements OnInit {
   veryriskystatus:any =[];
-  // riskstatus:any =[];
+
   user_data: any = [];
   user_id: any;
   constructor(
@@ -34,8 +34,7 @@ export class VeryriskystatusPage implements OnInit {
   loaddata() {
     let url = "http://localhost/db_ifightcovid19/loaddatapatientveryriskystatus.php";
     let url2 = "http://localhost/db_ifightcovid19/load1.php";
-    // this.user_id = sessionStorage.getItem('user_id') 
-    // this.http.get(url + "/?id=" + this.user_id)
+   
     this.http.get(url)
       .subscribe(data => {
         if (data != null) {
@@ -58,6 +57,6 @@ export class VeryriskystatusPage implements OnInit {
   routeTo(id) {
     this.router.navigate(['/nameveryriskstatus', id])
   }
-  // namenormal
+  
 }
 

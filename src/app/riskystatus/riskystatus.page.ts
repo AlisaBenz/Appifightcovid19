@@ -33,8 +33,7 @@ export class RiskystatusPage implements OnInit {
   loaddata() {
     let url = "http://localhost/db_ifightcovid19/loaddatapatientriskstatus.php";
     let url2 = "http://localhost/db_ifightcovid19/load1.php";
-    // this.user_id = sessionStorage.getItem('user_id') 
-    // this.http.get(url + "/?id=" + this.user_id)
+ 
     this.http.get(url)
       .subscribe(data => {
         if (data != null) {
@@ -57,37 +56,10 @@ export class RiskystatusPage implements OnInit {
   routeTo(id) {
     this.router.navigate(['/nameriskstatus', id])
   }
-  // namenormal
+
 }
 
 
-  // riskstatus:any =[];
-  // constructor(
-  //   public navCtrl: NavController,
-  //   public http: HttpClient,
-  //   public navParams: NavParams,
-  //   public alertController: AlertController) { 
-  //     this.loaddata()
-
-  //   }
-
-  //   loaddata(){
-  //     let url = " http://localhost/db_ifightcovid19/loaddatapatientriskstatus.php";
-  //     this.http.get(url)
-  //     .subscribe(data=> {
-  //       if(data != null){
-  //         this.riskstatus = data;
-  //         console.log("done.",data);
-  //       }
-  //     },error=>{
-  //       console.log("load fial.")
-    
-  //     });
-  //   }
-  // ngOnInit() {
-//   }
-
-// }
 
 
 

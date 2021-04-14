@@ -34,8 +34,7 @@ export class NormalstatusPage implements OnInit {
   loaddata() {
     let url = "http://localhost/db_ifightcovid19/loaddatapatientnormalstatus.php";
     let url2 = "http://localhost/db_ifightcovid19/load1.php";
-    // this.user_id = sessionStorage.getItem('user_id') 
-    // this.http.get(url + "/?id=" + this.user_id)
+   
     this.http.get(url)
       .subscribe(data => {
         if (data != null) {
@@ -58,6 +57,6 @@ export class NormalstatusPage implements OnInit {
   routeTo(id) {
     this.router.navigate(['/namenormal', id])
   }
-  // namenormal
+  
 }
 
