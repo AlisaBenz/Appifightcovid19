@@ -40,53 +40,18 @@ export class GenerateuseradminPage implements OnInit {
       postdataset.append('role',this.insertdata.role);
       let callback: Observable<any> = this.http.post(url, postdataset);
 
-    callback.subscribe(call => {
-      if (call.status == 200) {
-      } else { }
+      callback.subscribe(call =>{
+    
+        const alert = document.createElement('ion-alert');
+      alert.message = 'ลงทะเบียนเสร็จเรียบร้อย';
+      alert.buttons = ['ตกลง'];
+      document.body.appendChild(alert);
+      return alert.present();
     });
-    const alert = document.createElement('ion-alert');
-    alert.message = 'ลงทะเบียนเสร็จสมบูรณ';
-    alert.buttons = ['ตกลง'];
-    document.body.appendChild(alert);
-    return alert.present();
-  };
+  }
 }
-
-  //   logout(){
-  //     const alert = document.createElement('ion-alert');
-  //     alert.message = 'ออกจากระบบ?';
-  //     alert.buttons = [
-  //       {
-  //         text: 'ยกเลิก',
-  //         role: 'cancel',
-  //         handler: () => {
-  //           console.log('Cancel clicked');
-  //         }
-  //       },
-  //       {
-  //         text: 'ใช่',
-  //         handler: () => {
-  //           this.clear();
-            
-  //         }
-  //       }
-        
-  //     ];
-  //       document.body.appendChild(alert);
-  //       return alert.present()
-  //   }
-  //   clear(){
-  //     window.sessionStorage.clear()
-  //     this.gotopage()
-  //   }
-  //   gotopage(){
-  //     this.router.navigate(['home'])
-  //   }
-  
-  // }
+ 
 
 
 
 
-
-  

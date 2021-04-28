@@ -18,7 +18,7 @@ import { Router } from '@angular/router';
   providers: [NavParams],
 })
 export class NormalstatusPage implements OnInit {
-  patientgraph: any = [];
+  normalstatus: any = [];
   user_data: any = [];
   user_id: any;
   constructor(
@@ -38,9 +38,9 @@ export class NormalstatusPage implements OnInit {
     this.http.get(url)
       .subscribe(data => {
         if (data != null) {
-          this.patientgraph = data;
-          for (let index = 0; index < this.patientgraph.length; index++) {
-            this.http.get(url2 + "/?id=" + this.patientgraph[index].user_id).subscribe(datauser => {
+          this.normalstatus = data;
+          for (let index = 0; index < this.normalstatus.length; index++) {
+            this.http.get(url2 + "/?id=" + this.normalstatus[index].user_id).subscribe(datauser => {
               this.user_data.push(datauser)
             })
           }

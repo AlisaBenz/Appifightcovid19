@@ -16,46 +16,19 @@ export class AddformquestionPage implements OnInit {
 
 
   insertdata: any ={};
+  toString:any={};
+  // id:any={};
   constructor(
     public navCtrl: NavController,
     public http: HttpClient,
     public navParams: NavParams,
     public atrCtrl: AlertController) { }
 
-    // showConfirmAlert() {
-    //   let alertConfirm = this.atrCtrl.create({
-    //     // title: 'Delete Items',
-    //     message: 'Are You Sure to delete this itemss?',
-    //     buttons: [
-    //       {
-    //         text: 'No',
-    //         role: 'cancel',
-    //         handler: () => {
-    //           console.log('No clicked');
-    //         }
-    //       },
-    //       {
-    //         text: 'Yess',
-    //         handler: () => {
-    //           console.log('Yes clicked');
-    //         }
-    //       }
-    //     ]
-    //   });
-    //   // alertConfirm.present();
-    //   await alert.present();
-    // }
-
-    
   ngOnInit() {
   }
 
     saveaddformquestion(){
       let url = 'http://localhost/db_ifightcovid19/insertdataaddform.php'
-
-      
-
-  
       let postdataset = new FormData();
       postdataset.append('addform1',this.insertdata.addform1);
       postdataset.append('addform3',this.insertdata.addform3);
@@ -64,18 +37,43 @@ export class AddformquestionPage implements OnInit {
       postdataset.append('addform6',this.insertdata.addform6);
       let callback:Observable<any> = this.http.post(url,postdataset);
       callback.subscribe(call =>{
-        if(call.status == 200){
-        }else{}});
+    
         const alert = document.createElement('ion-alert');
-      alert.message = 'บันทึกรายการเสร็จสมบูรณ์';
+      alert.message = 'ลงทะเบียนเสร็จเรียบร้อย';
       alert.buttons = ['ตกลง'];
       document.body.appendChild(alert);
       return alert.present();
+    });
+    
     }
-
-
-
-
- 
+    deleteaddformquestion(){
+      const alert = document.createElement('ion-alert');
+      alert.message = 'คุณต้องการลบแบบฟอร์มที่ได้บันทึกไปแล้ว หรือไม่?';
+      alert.buttons = [
+        {
+          text: 'ยกเลิก',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'ใช่',
+          handler: () => {this.deletedataaddformquestion()}
+        } 
+      ];
+        document.body.appendChild(alert);
+        return alert.present();
+      }
+  deletedataaddformquestion(){
+      let url = 'http://localhost/db_ifightcovid19/deleteformquestion.php'
+      let postdata = new FormData();
+      postdata.append('addform_id',toString());
+      this.http.post(url,postdata).subscribe(data => {
+        if(data != null){
+            console.log("done.")
+        }
+      },error=>{ console.log("done")}); 
+    
+  }
 }
-

@@ -58,7 +58,7 @@ export class ScreeningPage implements OnInit {
     postdataset.append('questionnaire8', this.insertdata.questionnaire8);
     postdataset.append('selected',this.insertdata.selected);
     postdataset.append('user_id',this.user_id);
-    // postdataset.append('questionnaire9',this.insertdata.questionnaire9);
+  
 
     let callback: Observable<any> = this.http.post(url, postdataset);
     callback.subscribe(call => {
@@ -96,6 +96,4 @@ export class ScreeningPage implements OnInit {
 
       });
   }
-
-
 }

@@ -63,13 +63,13 @@ export class RegisterPage implements OnInit {
     postdataset.append('phone',this.insertdata.phone);
     let callback:Observable<any> = this.http.post(url,postdataset);
     callback.subscribe(call =>{
-      if(call.status == 200){
-      }else{}});
+    
       const alert = document.createElement('ion-alert');
     alert.message = 'ลงทะเบียนเสร็จเรียบร้อย';
     alert.buttons = ['ตกลง'];
     document.body.appendChild(alert);
     return alert.present();
+  });
   }
 
 }

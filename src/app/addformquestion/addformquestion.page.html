@@ -40,19 +40,17 @@
     <ion-input  type="text" value="ไม่มี" [(ngModel)]="insertdata.addform6" ></ion-input>
    </ion-item> 
   </ion-card>
-  
-
-
-
-
-
-
-
-
 <ion-row>
   <ion-col>
       <ion-button (click)="saveaddformquestion()"  type="submit" fill="solid" expand="full"color="danger">
         บันทึกฟอร์ม
+      </ion-button>
+  </ion-col>
+</ion-row>
+<ion-row>
+  <ion-col>
+      <ion-button (click)="deleteaddformquestion()"  type="submit" fill="solid" expand="full"color="primary">
+        ลบฟอร์มคำถาม
       </ion-button>
   </ion-col>
 </ion-row>

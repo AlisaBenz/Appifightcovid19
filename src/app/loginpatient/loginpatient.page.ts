@@ -40,7 +40,7 @@ export class LoginpatientPage implements OnInit {
   }
   checklogin(data) {
     const alert = document.createElement("ion-alert");
-    alert.message = "คุณต้องเข้าสู่ระบบ หรือไม่?";
+    alert.message = "คุณต้องการเข้าสู่ระบบ หรือไม่?";
     alert.buttons = [
       {
         text: "ยกเลิก",

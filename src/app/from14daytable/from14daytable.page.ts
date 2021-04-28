@@ -32,14 +32,6 @@ export class From14daytablePage implements OnInit {
     }
     
   ngOnInit() {
-    // let url = "http://localhost/db_ifightcovid19/updatestatus.php";  //อัพเดทข้อมูลสถานะผู้ป่วยย
-    // this.route.params.subscribe(params => {
-    //   this.id = params['id'];
-    // });
-    // this.http.get(url + "/?id=" + this.id).subscribe(datauser => {
-    //   this.user_data.updatestatus = datauser[0].updatestatus;
-
-    // })
   }
     loaddata(){
       this.user_id = sessionStorage.getItem('user_id')
@@ -87,19 +79,5 @@ export class From14daytablePage implements OnInit {
     
       });
     }
-    // loaddata1(){ //อัพเดทข้อมูลสถานะผู้ป่วยย
-    //   this.user_id = sessionStorage.getItem('user_id')
-    //   let url = "http://localhost/db_ifightcovid19/loadstatususer.php";
-    //   this.http.get(url + "/?id=" + this.id)
-    //   this.http.get(url)
-    //   .subscribe(data=> {
-    //     if(data != null){
-    //       this.statususer = data;
-    //       console.log("done.",data);
-    //     }
-    //   },error=>{
-    //     console.log("load fial.")
-    
-    //   });
-    // }
+  
 }

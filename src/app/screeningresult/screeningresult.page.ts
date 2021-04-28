@@ -20,13 +20,13 @@ export class ScreeningresultPage implements OnInit {
     public navParams: NavParams,
     public router:Router,
     public alertController: AlertController) { 
-      this.loaddata()
+      this.screeningresult()
     }
 
     ngOnInit() {
     }
   
-    loaddata(){
+    screeningresult(){
       this.user_id = sessionStorage.getItem('user_id')
       let url = "http://localhost/db_ifightcovid19/loaddatascreening.php";
       this.http.get(url + "/?id=" + this.user_id)

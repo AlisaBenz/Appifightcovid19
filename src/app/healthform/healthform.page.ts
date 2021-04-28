@@ -35,20 +35,16 @@ export class HealthformPage implements OnInit {
     postdataset.append('healthquestion2',this.insertdata.healthquestion2);
     postdataset.append('user_id',this.user_id);
     let callback:Observable<any> = this.http.post(url,postdataset);
-    callback.subscribe(call =>{
-      if(call.status == 200){
-      }else{}});
-      // const alert = document.createElement('ion-alert');
-      // alert.message = 'บันทึกรายการเสร็จสมบูรณ์';
-      // alert.buttons = ['ตกลง'];
-      // document.body.appendChild(alert);
-      // return alert.present();
-    //   const alert = document.createElement('ion-alert');
-    //  alert.message = 'บันทึกรายการเสร็จสมบูรณ์';
-    //  alert.buttons = ['ตกลง'];
-    //  document.body.appendChild(alert);
-    //  return alert.present();
+    callback.subscribe(async (call) => { 
+      const alert = document.createElement('ion-alert');
+      alert.message = 'บันทึกรายการเสร็จสมบูรณ์';
+      alert.buttons = ['ตกลง'];
+      document.body.appendChild(alert);
+      await alert.present();
+      
+      console.log(call);
+
+    });
+
   }
-
-
 }

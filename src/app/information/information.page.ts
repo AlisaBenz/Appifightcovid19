@@ -59,7 +59,7 @@ export class InformationPage implements OnInit {
         
       
       ]);
-      var options = {'title':'รายงานภาพรวมข้อมูลผู้ป่วย',
+      var options = {'title':'สรุปรายงานภาพรวมข้อมูลผู้ป่วย',
                      'width':400,
                      'height':300};
       var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
@@ -114,7 +114,7 @@ export class InformationPage implements OnInit {
                       .subscribe(data=> {
                         if(data != null){
                           this.patientnow = data;}},error=>{console.log("load fial.")});
-                        }  
+                        } 
                         logout(){
                           const alert = document.createElement('ion-alert');
                           alert.message = 'ออกจากระบบ?';
