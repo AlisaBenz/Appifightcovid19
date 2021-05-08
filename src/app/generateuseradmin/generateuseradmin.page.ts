@@ -5,6 +5,7 @@ import { NavController } from '@ionic/angular';
 import { Observable } from 'rxjs';
 import { AlertController } from '@ionic/angular';
 import { NavParams} from "@ionic/angular";
+import { NgForm } from '@angular/forms';
 import { Router} from '@angular/router'
 
 @Component({
@@ -16,6 +17,7 @@ import { Router} from '@angular/router'
 export class GenerateuseradminPage implements OnInit {
   insertdata:any= {};
   data:any;
+  isSubmitted: boolean;
   constructor(    
     public navCtrl: NavController,
     public http: HttpClient,
@@ -29,6 +31,15 @@ export class GenerateuseradminPage implements OnInit {
       };
     }
     ngOnInit() {
+    }
+    onSubmit(myForm: NgForm) {
+      this.isSubmitted = true;
+      console.log('onSubmit');
+      console.log(myForm);
+    }
+  
+    noSubmit(e) {
+      e.preventDefault();
     }
 
     loginaddmin(){

@@ -4,7 +4,7 @@ import { NavController } from '@ionic/angular';
 import { Observable } from 'rxjs';
 import { AlertController } from '@ionic/angular';
 import { NavParams} from "@ionic/angular";
-
+import { NgForm } from "@angular/forms";
 @Component({
   selector: 'app-loginadmin',
   templateUrl: './loginadmin.page.html',
@@ -15,6 +15,7 @@ export class LoginadminPage implements OnInit {
   insertdata:any= [];
   data:any=[];
   dataitem: any = [];
+  isSubmitted: boolean;
   constructor(    
     public navCtrl: NavController,
     public http: HttpClient,
@@ -28,6 +29,15 @@ export class LoginadminPage implements OnInit {
       };
     }
     ngOnInit() {
+    }
+    onSubmit(myForm: NgForm) {
+      this.isSubmitted = true;
+      console.log("onSubmit");
+      console.log(myForm);
+    }
+  
+    noSubmit(e) {
+      e.preventDefault();
     }
     checklogin(data) {
       const alert = document.createElement("ion-alert");

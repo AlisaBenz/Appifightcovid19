@@ -28,7 +28,7 @@ export class ScreeningPage implements OnInit {
     public http: HttpClient,
     public navParams: NavParams,
     public alertController: AlertController) {
-    this.loaddata()
+    this.loaddataquestion()
     this.question_list.forEach((q) => {
       q["selected"] = ""
     })
@@ -72,7 +72,7 @@ export class ScreeningPage implements OnInit {
     return alert.present();
   }
 
-  loaddata() {
+  loaddataquestion() {
     let url = "http://localhost/db_ifightcovid19/loaddataaddform.php";
     this.user_id = sessionStorage.getItem('user_id') // รับค่า user_id จาก sessionStorage
     this.http.get(url + "/?id=" + this.user_id)   ///

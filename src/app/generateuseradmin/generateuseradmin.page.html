@@ -19,6 +19,8 @@
     
     <ion-slide>
         <div class="contaier-login">
+            <div class="ion-padding">
+                <form #f="ngForm" novalidate (ngSubmit)="onSubmit(f)">
             <ion-grid>
                 <ion-row>
                     <ion-col>
@@ -34,11 +36,17 @@
                                 <ion-icon name="person" class="icon-login"></ion-icon>
                                 <ion-input [(ngModel)]="insertdata.username" name="username" type="text" required placeholder="username"></ion-input>
                             </ion-item>
+                            <ion-item [hidden]="f.controls.username && (f.controls.username.valid || (f.controls.username.pristine && !isSubmitted))">
+                                <ion-text color="danger">*username is required</ion-text>
+                              </ion-item>
                             <br />
                             <ion-item>
                                 <ion-icon  name="lock" class="icon-login"></ion-icon>
                                 <ion-input  [(ngModel)]="insertdata.password" name="password" type="password" required placeholder="password"></ion-input>
                             </ion-item>
+                            <ion-item [hidden]="f.controls.password && (f.controls.password.valid || (f.controls.password.pristine && !isSubmitted))">
+                                <ion-text color="danger">*password is required</ion-text>
+                              </ion-item>
                             <ion-item>
                                 <ion-label  position="fixed"><h3>สถานะผู้ใช้งาน</h3></ion-label>   
                                   <ion-label></ion-label>
@@ -67,6 +75,8 @@
                 </ion-col>
 
             </ion-grid>
+        </form >
+    </div>
         </div>
     </ion-slide>
 </ion-content>

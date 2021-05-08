@@ -39,7 +39,7 @@ export class AddformquestionPage implements OnInit {
       callback.subscribe(call =>{
     
         const alert = document.createElement('ion-alert');
-      alert.message = 'ลงทะเบียนเสร็จเรียบร้อย';
+      alert.message = 'บันทึกฟอร์มเสร็จเรียบร้อย';
       alert.buttons = ['ตกลง'];
       document.body.appendChild(alert);
       return alert.present();

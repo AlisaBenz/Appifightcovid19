@@ -26,14 +26,14 @@ export class From14daytablePage implements OnInit {
     public router:Router,
     public alertController: AlertController,
     private route: ActivatedRoute) { 
-      this.loaddata()
-      this.loaddata1()
+      this.showform14daytable()
+      this.showupdatestatus()
 
     }
     
   ngOnInit() {
   }
-    loaddata(){
+    showform14daytable(){
       this.user_id = sessionStorage.getItem('user_id')
       let url = "http://localhost/db_ifightcovid19/loaddataform14day.php";
       this.http.get(url + "/?id=" + this.user_id)
@@ -47,7 +47,7 @@ export class From14daytablePage implements OnInit {
     
       });
     }
-    loaddata1(){ //อัพเดทข้อมูลสถานะผู้ป่วยย
+    showupdatestatus(){ //อัพเดทข้อมูลสถานะผู้ป่วยย
       this.user_id = sessionStorage.getItem('user_id')
       let url = "http://localhost/db_ifightcovid19/loadstatususer.php";
       this.http.get(url + "/?id=" + this.user_id)

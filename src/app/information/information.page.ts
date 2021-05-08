@@ -5,6 +5,8 @@ import {
   NavParams,
   AlertController,
 } from "@ionic/angular";
+
+// import API from "../../environments/environment.prod";
 import { Router } from '@angular/router';
 declare var google;
 
@@ -15,6 +17,7 @@ declare var google;
   providers: [NavParams],
 })
 export class InformationPage implements OnInit {
+  // api: string = 'https://concertante-expirat.000webhostapp.com/';
   count1:any=[];
   count2:any=[];
   count3:any=[];
@@ -67,6 +70,7 @@ export class InformationPage implements OnInit {
     };
     loaddata(){
       let url = "http://localhost/db_ifightcovid19/loaddatagarph.php";
+      // let url = this.api + "loaddatagarph.php";
       this.http.get(url)
       .subscribe(data=> {
         if(data != null){
@@ -80,6 +84,7 @@ export class InformationPage implements OnInit {
     }
 
     loaddatacount1(){
+      // let url =  this.api + "loaddatacount1.php";
       let url = "http://localhost/db_ifightcovid19/loaddatacount1.php";
       this.http.get(url)
       .subscribe(data=> {
@@ -88,6 +93,7 @@ export class InformationPage implements OnInit {
         }
         loaddatacount2(){
           let url = "http://localhost/db_ifightcovid19/loaddatacount2.php";
+          // let url = "https://concertante-expirat.000webhostapp.com/loaddatacount2.php";
           this.http.get(url)
           .subscribe(data=> {
             if(data != null){
